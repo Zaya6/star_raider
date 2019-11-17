@@ -1,0 +1,154 @@
+# Gameplay
+Levels plays like a traditional roguelike within star raiding levels that are playable within each region. On each region are special locations shown as an icon that don't have enemies and can be played more freely with NPCs to interact with. Talking to NPCs may reveal news about the world, bits of lore, or quests that the player can complete to unlock parts of the game or for simple rewards.
+
+## Level Progression
+Levels are selected from a world map with special icons denoting special locations with NPCs. Star levels are regenerated uniquely each time they're played (so it seems like the player is always playing somewhere new). The special locations accessed through icons are regenerated from the same seed so that they may appear the same. (this also allows us to make small generation changes based on the progression of the story)
+
+### World Map
+The world map is divided into regions that allow the player to play different level types. Each region should show the level of completion that takes into account the number of stars unrecovered and items that haven't been found yet. Within each location are special maps denoted by an icon where the player may talk to NPCs and do special quests.
+
+#### Regions
+The regions are important for playing different types of levels and for completing certain quests that must be completed within the region. Each Region holds a number of stars and other objects like "Refined Time Water" that increases the health of the player permanently.
+
+* **The Wondering Plains** ?skies
+	- This is one area broken up into 3 different regions.
+	- These levels are very wide and open, broken rarely by walls, trees, or rocks. As the starting area, it should have the easiest enemies and should never spawn giant types. 
+	* **The Western Plains**
+		+ Home to Nova and his tribe. 
+		+ Easy enemies with no giants
+		+ Special Map: **Nova's Camp**
+			+ Wide open area with several Yurts in the Western Tribe's colors. Many NPCs with a central Yurt for the home of the Lyt. While injured NPCs should crowd around the Lyt's yurt, but should never block the path.
+			+ After the Lyt dies the NPCs become scattered around the level.
+	* **The Eastern Plains**
+		- Only accessible after quest for the Lyt
+		- Moderate danger enemies, no giants
+		- The Western Plains have constant rainfall and are home to all manner of creatures that love that wet weather.
+		- Special Map: **Nimrod's Camp**
+			+ Very similar to Nova's camp but with yurts colored in the Eastern Tribe's colors. Instead of a giant yurt for the Lyt, there is a giant campfire which the Lyt sleeps at. 
+	* **The Northern Plains**
+		- Only accessible after completing quest for the Lyt, must beat Gamer in minigame.
+		- Hard Enemies with giants
+			+ Mammoth?
+		- The grass is bluer and shorter, the water may have floating ice in it. Grass is sparser.
+		- Special Map: **Aldro's Camp**
+			+ On top of a plateau, Aldro is a hunter and there are skins hung to dry and giant tusks.
++ **The Shadow Crags**
+	* Only accessible after completing half of the Western Plains, Bubo suggests meeting with Old Nan. Must do quest for Old Nan first.
+	* Easy-to-moderate enemies with Giants
+	* Purple water with purple rocky land. Rocky walls and maze-like.
+	* Special Map: **Old Nan's Castle**
+		- Castle that is ruined with time
++ **The Splintered Woods**
+	* Accessible only after completing quest for the Weavers.
+	* Moderate enemies with giants
+	* Special Map: **The Great Tree**
+		- Inside giant treehouse
++ **The Forge**
+	* Accessible only after completing quest for Old Nan and receiving quick travel.
+	* Moderate-to-hard enemies with giants
+	* Special Map: **The Gamer**
+		- look [TODO assign to Robert]
++ **The Crystal Springs**
+	* Accessible after completing quest for Old Nan
+	* Hard enemies with giants
+	* Special Map: **Temple of Life**
+		- TODO
+
+#### Ideal Region Progression
+**Western Plains**(easy)=>**Shadow Crags**(easy-moderate)==>**Eastern Plains**(moderate)**Splintered Forest**(moderate)==>**Forge**(moderate-hard)==>**Northern Plains**(hard)==>**Crystal Springs**(hard)
+
+
+#### End of Star Raiding Maps
+Players may leave these levels instantly by using a context menu on themselves. If leaving this way all stars still being herded are lost. After a level is finished, the most that should be shown is the new state of completion for the region. (*Maybe with a dancing bubo to have an extra touch.*)
+
+#### End of Special Maps
+Players can leave these levels at any point. There should be no additional screen and the game should return to the overhead map.
+
+
+## Items
+There are three types of items. Items that are quest items. Items that are reoccurring without random properties and items that have randomized properties.
+
+The main fun of Roguelikes are the ridiculous combinations and types of items to use. So the list of items should be exhaustive. 
+
+[Link to Items Doc](Items.md)
+
+## Loot
+
+Loot will obviously be randomized, but there needs to be a few rules established to maintain that loot is never disappointing for completion of large tasks. And so there should be two rules:
+
+1. The further away from the entrance of the loot spawning will impact its quantity and rarity.
+2. Loot from enemies will be the untouched except for giants which will spawn more and higher quality items.
+
+The difficulty of the level will not impact the quantity or rarity. (This might change depending on how the game plays.)
+
+Loot dropped onto a floor should appear as simple sacks and empty sack if the player has already looted. Additionally a sack should appear opened if the player has opened a sack but rejected items to distinguish between old loot and new. (I hate accidentally reopening the same things over and over because I think they're new)
+
+* Likewise chests should exhibit the same three states, **unopened, opened, and empty.**
+
+## Combat
+Combat follows what many roguelikes do. For every single turn, every possible action should be available. Attacking should be as simple as clicking an enemy. Ranged weapons will not be constrained to a particular axis, as they are in some games.
+
+Attacking an interactive object like a switch with a ranged weapon should activate it.
+
+
+## Traps
+Traps are a integral part of Star Raider. They allow lots of different gameplay opportunities that shake things up. Running into traps are some of the funnest parts of roguelikes and any roguelikes that skip on this are hurting themselves. An ideal example is brogue which has a gigantic variety of traps, including monkeys that are chained to the floor that act as bait for an ambush.
+
+1. Status Effect Gas Trap [random properties]
+3. Rolling boulder trap
+4. Ambush trap [monster bait]
+5. Ambush trap[item bait]
+6. Binding Vine trap
+7. Mimic
+8. Confusion Trap
+9. Alarm Trap
+10. Alarm Trap[item bait]
+11. Fire Trap
+
+## Status Effects
+
+1. Poisoned
+	* Effect: TotalHP*0.1 per turn
+2. Confused
+	* Moves and attacks randomly
++ Blind
+	* Enemies and objects turn invisible
++ Frozen
+	* Cannot move or attack use items for 1-5 turns
++ Sleep
+	* Cannot move or attack use items for 1-5 turns
++ Fear
+	* Automatically moves away from enemies, cannot attack or use items
+
+## Control Schemes
+Since this game is optimized for mobile first, touch must be a first class citizen. No overlay game pads, players control the game by interacting directly with the screen. 
+
+In Raider levels:
+
+1. **Movement**
+	* When there is no enemy present, players may click anywhere on the map and Nova will seamlessly travel to that point. Unless an enemy appears which will cancel the movement so players can react.
+	* When an enemy is present players must move one turn at a time so that a player will never accidentally waste their turns with accidental taps. The player can still return to the faster movement that wastes turns through the context menu, see below.
+		- Remember some people have "fat finger syndrome" and accidentally tap a space next to an enemy when attempting to attack. These players should not be punished.
+2. **Attacking** will be accomplished simply by tapping on an enemy with one distinction.
+	* A check occurs against the weapon's range when attacking. If the enemy is within range an attack occurs. If the enemy is too far away a message should appear that says "enemy is too far". (We should stay away from hand holding but communicating important information to the player shouldn't be discouraged)
+	* (Maybe longer melee weapons such as spears can attack two spaces away)
+3. **Interactiveobject** or **NPCs** should activated or initiate dialog with a single tap. There are a few distinctions...
+	* Treasure chests and loot should be accessible when within one space of the player. (next to)
+	* NPCs should be accessible when within 3 spaces of the player.
+	* Objects should be actionable when attacked with ranged weapons.
+4. **The context menu**
+	* The player should be able to tong tap on the screen and open a context menu for the space. The context menu may show a description of the space and allow special actions, such as...
+		- Writing a note on the floor
+		- Throwing an items (at anything including enemies)
+		- Activating objects
+		- possible special actions on NPCs <== TODO
+		- Leaving levels when opened on the player
+		- Search Trap
+		- Disable Trap
+
+**The Region Select** should behave like a normal application, clicking on a region should show a dialog with the current completion of the area and a confim button to travel to the location. This should happen for raiding levels and special maps.
+
+## Fast Travel
+Fast travel becomes available once Old Nan is met and she gives the player a special Parallax Gem. A magical gem with shifting physical properties that allows the player to shift between points in reality. This items is used to leave levels early and opens up the multiple regions to be visited.
+
+
