@@ -1,13 +1,36 @@
-# Gameplay
+<!-- TOC -->
+
+- [1. Gameplay](#1-gameplay)
+	- [1.1. Level Progression](#11-level-progression)
+		- [1.1.1. World Map](#111-world-map)
+			- [1.1.1.1. Regions](#1111-regions)
+			- [1.1.1.2. Ideal Region Progression](#1112-ideal-region-progression)
+			- [1.1.1.3. Recovering Stars](#1113-recovering-stars)
+			- [1.1.1.4. End of Star Raiding Maps](#1114-end-of-star-raiding-maps)
+			- [1.1.1.5. End of Special Maps](#1115-end-of-special-maps)
+	- [1.2. Items](#12-items)
+	- [1.3. Loot](#13-loot)
+	- [1.4. Combat](#14-combat)
+	- [1.5. Traps](#15-traps)
+	- [1.6. Status Effects](#16-status-effects)
+	- [1.7. Magic Items](#17-magic-items)
+		- [1.7.1. Wands or staffs](#171-wands-or-staffs)
+		- [1.7.2. Scrolls](#172-scrolls)
+	- [1.8. Control Schemes](#18-control-schemes)
+	- [1.9. Fast Travel](#19-fast-travel)
+
+<!-- /TOC -->
+
+# 1. Gameplay
 Levels plays like a traditional roguelike within star raiding levels that are playable within each region. On each region are special locations shown as an icon that don't have enemies and can be played more freely with NPCs to interact with. Talking to NPCs may reveal news about the world, bits of lore, or quests that the player can complete to unlock parts of the game or for simple rewards.
 
-## Level Progression
+## 1.1. Level Progression
 Levels are selected from a world map with special icons denoting special locations with NPCs. Star levels are regenerated uniquely each time they're played (so it seems like the player is always playing somewhere new). The special locations accessed through icons are regenerated from the same seed so that they may appear the same. (this also allows us to make small generation changes based on the progression of the story)
 
-### World Map
+### 1.1.1. World Map
 The world map is divided into regions that allow the player to play different level types. Each region should show the level of completion that takes into account the number of stars unrecovered and items that haven't been found yet. Within each location are special maps denoted by an icon where the player may talk to NPCs and do special quests.
 
-#### Regions
+#### 1.1.1.1. Regions
 The regions are important for playing different types of levels and for completing certain quests that must be completed within the region. Each Region holds a number of stars and other objects like "Refined Time Water" that increases the health of the player permanently.
 
 * **The Wondering Plains** ?skies
@@ -54,25 +77,28 @@ The regions are important for playing different types of levels and for completi
 	* Special Map: **Temple of Life**
 		- TODO
 
-#### Ideal Region Progression
+#### 1.1.1.2. Ideal Region Progression
 **Western Plains**(easy)=>**Shadow Crags**(easy-moderate)==>**Eastern Plains**(moderate)**Splintered Forest**(moderate)==>**Forge**(moderate-hard)==>**Northern Plains**(hard)==>**Crystal Springs**(hard)
 
 
-#### End of Star Raiding Maps
+#### 1.1.1.3. Recovering Stars
+At the beginning of each map Bubo Waits for the player and when the player brings back stars Bubo takes them and flies them back to his tribe.
+
+#### 1.1.1.4. End of Star Raiding Maps
 Players may leave these levels instantly by using a context menu on themselves. If leaving this way all stars still being herded are lost. After a level is finished, the most that should be shown is the new state of completion for the region. (*Maybe with a dancing bubo to have an extra touch.*)
 
-#### End of Special Maps
+#### 1.1.1.5. End of Special Maps
 Players can leave these levels at any point. There should be no additional screen and the game should return to the overhead map.
 
 
-## Items
+## 1.2. Items
 There are three types of items. Items that are quest items. Items that are reoccurring without random properties and items that have randomized properties.
 
 The main fun of Roguelikes are the ridiculous combinations and types of items to use. So the list of items should be exhaustive. 
 
 [Link to Items Doc](Items.md)
 
-## Loot
+## 1.3. Loot
 
 Loot will obviously be randomized, but there needs to be a few rules established to maintain that loot is never disappointing for completion of large tasks. And so there should be two rules:
 
@@ -85,13 +111,13 @@ Loot dropped onto a floor should appear as simple sacks and empty sack if the pl
 
 * Likewise chests should exhibit the same three states, **unopened, opened, and empty.**
 
-## Combat
+## 1.4. Combat
 Combat follows what many roguelikes do. For every single turn, every possible action should be available. Attacking should be as simple as clicking an enemy. Ranged weapons will not be constrained to a particular axis, as they are in some games.
 
 Attacking an interactive object like a switch with a ranged weapon should activate it.
 
 
-## Traps
+## 1.5. Traps
 Traps are a integral part of Star Raider. They allow lots of different gameplay opportunities that shake things up. Running into traps are some of the funnest parts of roguelikes and any roguelikes that skip on this are hurting themselves. An ideal example is brogue which has a gigantic variety of traps, including monkeys that are chained to the floor that act as bait for an ambush.
 
 1. Status Effect Gas Trap [random properties]
@@ -105,7 +131,7 @@ Traps are a integral part of Star Raider. They allow lots of different gameplay 
 10. Alarm Trap[item bait]
 11. Fire Trap
 
-## Status Effects
+## 1.6. Status Effects
 
 1. Poisoned
 	* Effect: TotalHP*0.1 per turn
@@ -120,7 +146,15 @@ Traps are a integral part of Star Raider. They allow lots of different gameplay 
 + Fear
 	* Automatically moves away from enemies, cannot attack or use items
 
-## Control Schemes
+## 1.7. Magic Items
+
+### 1.7.1. Wands or staffs
+These are equiped like weapons but use a little bit of star dust every time they're used. Some may be melee and some may be ranged.
+
+### 1.7.2. Scrolls
+Usually used for area attacks, healing, or effecting status in some way. Scrolls use star dust as well.
+
+## 1.8. Control Schemes
 Since this game is optimized for mobile first, touch must be a first class citizen. No overlay game pads, players control the game by interacting directly with the screen. 
 
 In Raider levels:
@@ -145,10 +179,11 @@ In Raider levels:
 		- Leaving levels when opened on the player
 		- Search Trap
 		- Disable Trap
+5. **Star Herding**
+   * When the player equips their herding staff, stars will follow them when the player moves within one space of a star. When the player unequips their staff the star will wait for the player. If a star is attacked during this time the star will run away and go to a random spot on the map.
+   * *Note, Stars will only run away if attacked while the player does not have their herding staff equipped. If a star becomes separated more than one space and they're attacked, they will run away regardless of Nova using the staff. This means if the player has a line of stars, they should be very careful.*
 
-**The Region Select** should behave like a normal application, clicking on a region should show a dialog with the current completion of the area and a confim button to travel to the location. This should happen for raiding levels and special maps.
+**The Region Select** should behave like a normal application, clicking on a region should show a dialog with the current completion of the area and a confirm button to travel to the location. This should happen for raiding levels and special maps.
 
-## Fast Travel
+## 1.9. Fast Travel
 Fast travel becomes available once Old Nan is met and she gives the player a special Parallax Gem. A magical gem with shifting physical properties that allows the player to shift between points in reality. This items is used to leave levels early and opens up the multiple regions to be visited.
-
-

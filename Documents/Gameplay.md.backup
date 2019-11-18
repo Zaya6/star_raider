@@ -114,10 +114,24 @@ Traps are a integral part of Star Raider. They allow lots of different gameplay 
 + Blind
 	* Enemies and objects turn invisible
 + Frozen
-	* Cannot move or attack for 1-5 turns
+	* Cannot move or attack use items for 1-5 turns
 + Sleep
-	* Cannot move or attack for 1-5 turns
-+ Fear 
+	* Cannot move or attack use items for 1-5 turns
++ Fear
+	* Automatically moves away from enemies, cannot attack or use items
+
+## Magic Items
+### Wands or staffs
+These are equiped like weapons but use a little bit of star dust every time they're used. Some may be melee and some may be ranged.
+
+### Scrolls
+Usually used for area attacks, healing, or effecting status in some way.
+
+## Miracles
+*This section likely to change or be cut from game*
+It would be interesting to have certain "magical" miracles that are used conveniently to overcome obstacles. A miracle would be a one off spell that fixes status effects or lets the player overcome obstacles. Example, a boulder blocks Nova's path. Using the levitate miracle would float the obstacle and let Nova pass underneath. Or Nova is blinded, using the cure blindness miracle would heal him. However each evocation drains Nova of all star dust.
+
+Here's the kicker, in order to use miracles players must draw out the symbol for the miracle with their finger. Getting a new ancient symbol to draw adds a new miracle to the player's inventory.
 
 ## Control Schemes
 Since this game is optimized for mobile first, touch must be a first class citizen. No overlay game pads, players control the game by interacting directly with the screen. 
