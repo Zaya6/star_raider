@@ -21,6 +21,9 @@ Special items for completing quests.
 | Sol Star | The star of Earth and an important relic. | --- | --- | --- | --- |
 | Parallax Gem | Used to quick travel to parallel places is time. Given to Nova at the end of Act I after Bubo pleads your case to Old Nan. | --- | --- | --- | --- |
 |  |  | --- | --- | --- | --- |
+|  |  | --- | --- | --- | --- |
+|  |  | --- | --- | --- | --- |
+|  |  | --- | --- | --- | --- |
 
  
 ## 1.2. Unique Items
@@ -34,6 +37,10 @@ Items that aren't generated, with very specific uses but serve no use in quests 
 | Time Water | Found at wells that tap into Eterna's springs. May be stored in bottles. **USE:** Refill time containers(health) | --- | --- | --- | --- |
 | Time Crystal | Refined Time water that has been purified by an elders. Combine four to permanently increase player's time(health) | --- | --- | --- | --- |
 |  |  | --- | --- | --- | --- |
+|  |  | --- | --- | --- | --- |
+|  |  | --- | --- | --- | --- |
+|  |  | --- | --- | --- | --- |
+
 
 
 ## 1.3. Generated Items
@@ -44,4 +51,7 @@ Items that have some form of generated stats. Think weapons/armor or scrolls.
 | :----------------- | :----------------------------------------------- | :---------: | :-----------: | :--------: | :----: |
 | Rock Club          | A stone club created by the ancient stone giants.    |    ---     |      ---      |    ---     | --- |
 | **[color]** Potion | Potions that are found around the world of Eterna that were made by the dying witches for coin. |     ---     | --- |   ---      |    ---     |
+|  |  | --- | --- | --- | --- |
+|  |  | --- | --- | --- | --- |
+|  |  | --- | --- | --- | --- |
 |  |  | --- | --- | --- | --- |

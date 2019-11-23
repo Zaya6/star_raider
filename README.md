@@ -12,6 +12,5 @@ A Roguelike set within a higher plane of existance where the stars of the univer
 * [Gameplay](Documents/Gameplay.md)
 * [Items](Documents/Items.md)
 * [Enemies](Documents/Enemies.md)
-* [~~Miracles~~]()
 * [User Interface](Documents/ui.md)
 * [~~Sounds~~]()
