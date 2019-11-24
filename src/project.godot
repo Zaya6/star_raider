@@ -8,9 +8,14 @@
 
 config_version=4
 
-_global_script_classes=[  ]
+_global_script_classes=[ {
+"base": "Reference",
+"class": "TileMatcher",
+"language": "GDScript",
+"path": "res://code/gen/TileMatcher.gd"
+} ]
 _global_script_class_icons={
-
+"TileMatcher": ""
 }
 
 [application]
@@ -18,6 +23,10 @@ _global_script_class_icons={
 config/name="Star Raider"
 run/main_scene="res://scenes/logo.tscn"
 config/icon="res://icon.png"
+
+[autoload]
+
+ST="*res://code/gen/ST.gd"
 
 [display]
 
@@ -27,10 +36,6 @@ window/per_pixel_transparency/enabled=true
 window/handheld/orientation="portrait"
 window/stretch/mode="2d"
 window/stretch/aspect="keep"
-
-[physics]
-
-2d/default_gravity=500
 
 [rendering]
 

@@ -1,4 +1,8 @@
 
+#star raider specific ignores
+export/
+*keystore
+
 # Godot-specific ignores
 .import/
 export.cfg

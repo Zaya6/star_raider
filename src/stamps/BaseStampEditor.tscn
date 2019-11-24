@@ -1,0 +1,28 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://code/Editors/StampEditor.gd" type="Script" id=1]
+[ext_resource path="res://code/Editors/TileEditor.gd" type="Script" id=2]
+
+[node name="StampEditor" type="Node"]
+script = ExtResource( 1 )
+StampLibraryPath = "res://src/stamps/libraries/room_test.json"
+stampName = "top"
+limitSpawns = 1
+
+[node name="Pattern" type="TileMap" parent="."]
+cell_y_sort = true
+format = 1
+script = ExtResource( 2 )
+lineColor = Color( 1, 0, 1, 0.6 )
+width = 2
+height = 2
+
+[node name="Stamp" type="TileMap" parent="."]
+cell_y_sort = true
+format = 1
+script = ExtResource( 2 )
+lineColor = Color( 0.00784314, 0, 1, 0.6 )
+width = 2
+height = 2
+
+[node name="Objects" type="Node2D" parent="Stamp"]
