@@ -13,4 +13,4 @@ A Roguelike set within a higher plane of existance where the stars of the univer
 * [Items](Documents/Items.md)
 * [Enemies](Documents/Enemies.md)
 * [User Interface](Documents/ui.md)
-* [~~Sounds~~]()
+* [Sounds](Documents/sound.md)

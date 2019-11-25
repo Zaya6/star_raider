@@ -1,9 +1,10 @@
 <!-- TOC -->
 
 - [1. Items](#1-items)
-  - [1.1. Quest Items](#11-quest-items)
-  - [1.2. Unique Items](#12-unique-items)
-  - [1.3. Generated Items](#13-generated-items)
+  - [1.1. Item Stats](#11-item-stats)
+  - [1.2. Quest Items](#12-quest-items)
+  - [1.3. Unique Items](#13-unique-items)
+  - [1.4. Generated Items](#14-generated-items)
 
 <!-- /TOC -->
 
@@ -11,7 +12,21 @@
 
 Items are planned to be a major draw to Star Raider players. Having a unique combination of items useful for specific levels and enemies is paramount to keeping the game fun until the end.
 
-## 1.1. Quest Items
+
+## 1.1. Item Stats
+
+| Stat Name | Description | 
+| :--- | :---| 
+| ATK | ? |
+| DEF | ? | 
+| WIS | ? | 
+| CON | ? | 
+| TIME | ? | 
+| LUCK | ? |
+| Status DEF | ? | 
+| Status ATK | ? | 
+
+## 1.2. Quest Items
 
 Special items for completing quests.
 
@@ -26,7 +41,7 @@ Special items for completing quests.
 |  |  | --- | --- | --- | --- |
 
  
-## 1.2. Unique Items
+## 1.3. Unique Items
 
 Items that aren't generated, with very specific uses but serve no use in quests or the story. 
 
@@ -43,7 +58,7 @@ Items that aren't generated, with very specific uses but serve no use in quests 
 
 
 
-## 1.3. Generated Items
+## 1.4. Generated Items
 
 Items that have some form of generated stats. Think weapons/armor or scrolls.
 

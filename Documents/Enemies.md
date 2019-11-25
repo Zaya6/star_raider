@@ -10,6 +10,7 @@
   - [1.5. The Splintered Woods](#15-the-splintered-woods)
   - [1.6. The Forge](#16-the-forge)
   - [1.7. The Crystal Springs](#17-the-crystal-springs)
+  - [1.8. Leveling](#18-leveling)
 
 <!-- /TOC -->
 
@@ -76,3 +77,29 @@ A basic enemy humanoid that can use items. Randomly spawns with 1 item to use (e
 ## 1.6. The Forge
 
 ## 1.7. The Crystal Springs
+
+## 1.8. Leveling
+
+/*idea is that the player should be able to progress as they want with higher risk or lower risk debating on the enemy they are fighting. If the enemy is a higher level than the player (and the player defeats it) then the player should earn more experience. However, If the player faces a lower leveled enemy than they are, then they might not gain much exp (if any in some cases)*/
+
+    Int baseEXP = 50;
+    Int playerLVL, enemyLVL, LVLCounter, extraEXP, deductedEXP, EXP;
+
+    /////////////////checking to see if they are the same lvl or not///////////////////
+    Check if the playerLVL == enemyLVL, if so than they earn the baseEXP
+
+    ////////////////figuring out EXP if they are not the same lvl//////////////////////
+    Else the following applies:
+    Take player level and enemy level and do the following equation: playerLVL – enemyLVL = LVLCounter
+
+    If LVLCounter is positive then do the following:
+    extraEXP = LVLCounter*25;
+    EXP = baseEXP + extraEXP; //how much the player earned in EXP
+
+    If LVLCounter is negative then do the following:
+    deductedEXP = LVLCounter * -1; //makes it a positive number
+    deductedEXP *= 10;
+    baseEXP – deductedEXP = EXP;
+    if (EXP < 0){
+    EXP = 0;
+    }
