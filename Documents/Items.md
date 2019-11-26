@@ -4,6 +4,8 @@
   - [1.1. Item Stats](#11-item-stats)
   - [1.2. Quest Items](#12-quest-items)
   - [1.3. Unique Items](#13-unique-items)
+    - [1.3.1. Star Dust](#131-star-dust)
+    - [1.3.2. Time Water](#132-time-water)
   - [1.4. Generated Items](#14-generated-items)
 
 <!-- /TOC -->
@@ -45,11 +47,21 @@ Special items for completing quests.
 
 Items that aren't generated, with very specific uses but serve no use in quests or the story. 
 
+### 1.3.1. Star Dust 
+Magical dust harvested from stars by the Herders. The dust forms their main source of nutrition, along with the time water. Star dust is also used by Herders to perform miracles. **USE:** Refill MP bar to perform miracles(spells)
+
+### 1.3.2. Time Water
+Found at wells that tap into Eterna's springs. May be stored in bottles. **USE:** Refill time containers(health)
+
 | Item               | Description/Use/Effect                               | Icon Status | Effect Status | SFX Status | Coded |
 | :----------------- | :--------------------------------------------------- | :---------: | :-----------: | :------:   | :----: |
-| Star Dust | Magical dust harvested from stars by the Herders. The dust forms their main source of nutrition, along with the time water. Star dust is also used by Herders to perform miracles. **USE:** Refill MP bar to perform miracles(spells) | --- | --- | --- | --- |
-| Star Stone | Stones formed through natural process from star dust compressed in the core of Eterna. **USE:** Combine four to star dust capacity. | --- | --- | --- | --- |
-| Time Water | Found at wells that tap into Eterna's springs. May be stored in bottles. **USE:** Refill time containers(health) | --- | --- | --- | --- |
+| Star Dust Bag  | Fills SD bar (MP) 25% | --- | --- | --- | --- |
+| Lg. Star Dust Bag  | Fills SD bar (MP) 50% | --- | --- | --- | --- |
+| Star Dust Jar | Fills SD bar (MP) 75% | --- | --- | --- | --- |
+| Star Stone | Stones formed through natural process from star dust compressed in the core of Eterna. **USE:** Combine Four to star dust capacity. | --- | --- | --- | --- |
+| Time Water Vial | Fills Time Containers (HP) 25% | --- | --- | --- | --- |
+| Time Water Potion | Fills Time Containers (HP) 50% | --- | --- | --- | --- |
+| Time Water Jug | Fills Time Containers (HP) 75% | --- | --- | --- | --- |
 | Time Crystal | Refined Time water that has been purified by an elders. Combine four to permanently increase player's time(health) | --- | --- | --- | --- |
 |  |  | --- | --- | --- | --- |
 |  |  | --- | --- | --- | --- |

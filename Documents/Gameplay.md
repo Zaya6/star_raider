@@ -1,23 +1,25 @@
 <!-- TOC -->
 
-- [1. Gameplay](#1-gameplay)
-	- [1.1. Level Progression](#11-level-progression)
-		- [1.1.1. World Map](#111-world-map)
-			- [1.1.1.1. Regions](#1111-regions)
-			- [1.1.1.2. Ideal Region Progression](#1112-ideal-region-progression)
-			- [1.1.1.3. Recovering Stars](#1113-recovering-stars)
-			- [1.1.1.4. End of Star Raiding Maps](#1114-end-of-star-raiding-maps)
-			- [1.1.1.5. End of Special Maps](#1115-end-of-special-maps)
-	- [1.2. Items](#12-items)
-	- [1.3. Loot](#13-loot)
-	- [1.4. Combat](#14-combat)
-	- [1.5. Traps](#15-traps)
-	- [1.6. Status Effects](#16-status-effects)
-	- [1.7. Magic Items](#17-magic-items)
-		- [1.7.1. Wands or staffs](#171-wands-or-staffs)
-		- [1.7.2. Scrolls](#172-scrolls)
-	- [1.8. Control Schemes](#18-control-schemes)
-	- [1.9. Fast Travel](#19-fast-travel)
+- [Gameplay](#gameplay)
+    - [Level Progression](#level-progression)
+        - [World Map](#world-map)
+            - [Regions](#regions)
+            - [Ideal Region Progression](#ideal-region-progression)
+            - [Recovering Stars](#recovering-stars)
+            - [End of Star Raiding Maps](#end-of-star-raiding-maps)
+            - [End of Special Maps](#end-of-special-maps)
+    - [Items](#items)
+    - [Loot](#loot)
+    - [Player Stats and Leveling](#player-stats-and-leveling)
+        - [Leveling up Stats](#leveling-up-stats)
+    - [Combat](#combat)
+    - [Traps](#traps)
+    - [Status Effects](#status-effects)
+    - [Magic Items](#magic-items)
+        - [Wands or staffs](#wands-or-staffs)
+        - [Scrolls](#scrolls)
+    - [Control Schemes](#control-schemes)
+    - [Fast Travel](#fast-travel)
 
 <!-- /TOC -->
 
@@ -111,27 +113,53 @@ Loot dropped onto a floor should appear as simple sacks and empty sack if the pl
 
 * Likewise chests should exhibit the same three states, **unopened, opened, and empty.**
 
-## 1.4. Combat
+## 1.4. Player Stats and Leveling
+The player has a number of stats that impact gameplay in a number of ways.
+
+| Stat Name | Description 
+| :--- | :---|
+| ATK | Determines a player's melee damage  |
+| DEF | Determines a players defence against damage |
+| WIS | Effects the power of scrolls and identifying items|
+| CON | Effects the potency of potions and defence against status attacks (poison) |
+| DEX | Effects accuracy in ranged attacks and Dodging |
+| LUCK | Effects all skills a little bit, but primarily effects criticals and dodge |
+| TIME | Determines the (hp) of the player, hidden stat, non-leveling. Increased through Time Crystals | 
+| DUST | Determines the (MP) of the player, hidden stat, non-leveling. Increased through Star Stones. |
+
+### 1.4.1. Leveling up Stats
+When a player levels up that can choos between 3 categories of skills to increase.
+
+| Skill Category | Effected Skills |
+| :--- | :--- |
+| Warrior | ATK + DEF |
+| Phillosopher | WIS + CON | 
+| Conditional | DEX + LUCK |
+
+Time and Dust stats are increased by finding items in levels. Time Crystals and Star Stones respectively.
+
+
+## 1.5. Combat
 Combat follows what many roguelikes do. For every single turn, every possible action should be available. Attacking should be as simple as clicking an enemy. Ranged weapons will not be constrained to a particular axis, as they are in some games.
 
 Attacking an interactive object like a switch with a ranged weapon should activate it.
 
 
-## 1.5. Traps
+## 1.6. Traps
 Traps are a integral part of Star Raider. They allow lots of different gameplay opportunities that shake things up. Running into traps are some of the funnest parts of roguelikes and any roguelikes that skip on this are hurting themselves. An ideal example is brogue which has a gigantic variety of traps, including monkeys that are chained to the floor that act as bait for an ambush.
 
 1. Status Effect Gas Trap [random properties]
-3. Rolling boulder trap
-4. Ambush trap [monster bait]
-5. Ambush trap[item bait]
-6. Binding Vine trap
-7. Mimic
-8. Confusion Trap
-9. Alarm Trap
-10. Alarm Trap[item bait]
-11. Fire Trap
+2. Rolling boulder trap
+3. Ambush trap [monster bait]
+4. Ambush trap[item bait]
+5. Binding Vine trap
+6. Mimic
+7. Confusion Trap
+8. Alarm Trap
+9.  Alarm Trap[item bait]
+10. Fire Trap
 
-## 1.6. Status Effects
+## 1.7. Status Effects
 
 1. Poisoned
 	* Effect: TotalHP*0.1 per turn
@@ -146,15 +174,15 @@ Traps are a integral part of Star Raider. They allow lots of different gameplay 
 + Fear
 	* Automatically moves away from enemies, cannot attack or use items
 
-## 1.7. Magic Items
+## 1.8. Magic Items
 
-### 1.7.1. Wands or staffs
+### 1.8.1. Wands or staffs
 These are equiped like weapons but use a little bit of star dust every time they're used. Some may be melee and some may be ranged.
 
-### 1.7.2. Scrolls
+### 1.8.2. Scrolls
 Usually used for area attacks, healing, or effecting status in some way. Scrolls use star dust as well.
 
-## 1.8. Control Schemes
+## 1.9. Control Schemes
 Since this game is optimized for mobile first, touch must be a first class citizen. No overlay game pads, players control the game by interacting directly with the screen. 
 
 In Raider levels:
@@ -185,5 +213,5 @@ In Raider levels:
 
 **The Region Select** should behave like a normal application, clicking on a region should show a dialog with the current completion of the area and a confirm button to travel to the location. This should happen for raiding levels and special maps.
 
-## 1.9. Fast Travel
+## 1.10. Fast Travel
 Fast travel becomes available once Old Nan is met and she gives the player a special Parallax Gem. A magical gem with shifting physical properties that allows the player to shift between points in reality. This items is used to leave levels early and opens up the multiple regions to be visited.
