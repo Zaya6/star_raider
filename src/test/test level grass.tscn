@@ -1,0 +1,503 @@
+[gd_scene load_steps=25 format=2]
+
+[ext_resource path="res://Art/Tilesets/Star Raider Tileset.png" type="Texture" id=1]
+[ext_resource path="res://Art/particles/sparkle.png" type="Texture" id=2]
+[ext_resource path="res://test/nova_test_1.gd" type="Script" id=3]
+[ext_resource path="res://test/test_reflect.shader" type="Shader" id=4]
+[ext_resource path="res://Art/backgrounds/nebula_test_2.png" type="Texture" id=5]
+[ext_resource path="res://Art/backgrounds/nebula_test_1.png" type="Texture" id=6]
+[ext_resource path="res://Art/Utility/starfield2.png" type="Texture" id=7]
+[ext_resource path="res://Art/Utility/starfield1.png" type="Texture" id=8]
+[ext_resource path="res://Art/Utility/white_pixle.png" type="Texture" id=9]
+
+[sub_resource type="ConvexPolygonShape2D" id=1]
+points = PoolVector2Array( 0, 0, 64, 0, 64, 64, 0, 64 )
+
+[sub_resource type="ConvexPolygonShape2D" id=2]
+points = PoolVector2Array( 0, 0, 64, 0, 64, 64, 0, 64 )
+
+[sub_resource type="ConvexPolygonShape2D" id=3]
+points = PoolVector2Array( 0, 0, 64, 0, 64, 64, 0, 64 )
+
+[sub_resource type="ConvexPolygonShape2D" id=4]
+points = PoolVector2Array( 0, 0, 64, 0, 64, 64, 0, 64 )
+
+[sub_resource type="TileSet" id=5]
+0/name = "Star Raider Tileset.png 0"
+0/texture = ExtResource( 1 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 0, 64, 256, 64 )
+0/tile_mode = 1
+0/autotile/bitmask_mode = 0
+0/autotile/bitmask_flags = [ Vector2( 0, 0 ), 325, Vector2( 1, 0 ), 325, Vector2( 2, 0 ), 325, Vector2( 3, 0 ), 325 ]
+0/autotile/icon_coordinate = Vector2( 0, 0 )
+0/autotile/tile_size = Vector2( 64, 64 )
+0/autotile/spacing = 0
+0/autotile/occluder_map = [  ]
+0/autotile/navpoly_map = [  ]
+0/autotile/priority_map = [  ]
+0/autotile/z_index_map = [  ]
+0/occluder_offset = Vector2( 0, 0 )
+0/navigation_offset = Vector2( 0, 0 )
+0/shapes = [  ]
+0/z_index = 0
+1/name = "Star Raider Tileset.png 1"
+1/texture = ExtResource( 1 )
+1/tex_offset = Vector2( 0, 0 )
+1/modulate = Color( 1, 1, 1, 1 )
+1/region = Rect2( 0, 128, 256, 64 )
+1/tile_mode = 1
+1/autotile/bitmask_mode = 0
+1/autotile/bitmask_flags = [ Vector2( 0, 0 ), 325, Vector2( 1, 0 ), 325, Vector2( 2, 0 ), 325, Vector2( 3, 0 ), 325 ]
+1/autotile/icon_coordinate = Vector2( 0, 0 )
+1/autotile/tile_size = Vector2( 64, 64 )
+1/autotile/spacing = 0
+1/autotile/occluder_map = [  ]
+1/autotile/navpoly_map = [  ]
+1/autotile/priority_map = [  ]
+1/autotile/z_index_map = [  ]
+1/occluder_offset = Vector2( 0, 0 )
+1/navigation_offset = Vector2( 0, 0 )
+1/shapes = [  ]
+1/z_index = 0
+2/name = "Star Raider Tileset.png 2"
+2/texture = ExtResource( 1 )
+2/tex_offset = Vector2( 0, 0 )
+2/modulate = Color( 1, 1, 1, 1 )
+2/region = Rect2( 256, 64, 128, 64 )
+2/tile_mode = 1
+2/autotile/bitmask_mode = 0
+2/autotile/bitmask_flags = [ Vector2( 0, 0 ), 325, Vector2( 1, 0 ), 325 ]
+2/autotile/icon_coordinate = Vector2( 0, 0 )
+2/autotile/tile_size = Vector2( 64, 64 )
+2/autotile/spacing = 0
+2/autotile/occluder_map = [  ]
+2/autotile/navpoly_map = [  ]
+2/autotile/priority_map = [  ]
+2/autotile/z_index_map = [  ]
+2/occluder_offset = Vector2( 0, 0 )
+2/navigation_offset = Vector2( 0, 0 )
+2/shapes = [ {
+"autotile_coord": Vector2( 1, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 1 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+}, {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 2 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+2/z_index = 0
+3/name = "Star Raider Tileset.png 3"
+3/texture = ExtResource( 1 )
+3/tex_offset = Vector2( 0, 0 )
+3/modulate = Color( 1, 1, 1, 1 )
+3/region = Rect2( 256, 128, 128, 64 )
+3/tile_mode = 1
+3/autotile/bitmask_mode = 0
+3/autotile/bitmask_flags = [ Vector2( 0, 0 ), 325, Vector2( 1, 0 ), 325 ]
+3/autotile/icon_coordinate = Vector2( 0, 0 )
+3/autotile/tile_size = Vector2( 64, 64 )
+3/autotile/spacing = 0
+3/autotile/occluder_map = [  ]
+3/autotile/navpoly_map = [  ]
+3/autotile/priority_map = [  ]
+3/autotile/z_index_map = [  ]
+3/occluder_offset = Vector2( 0, 0 )
+3/navigation_offset = Vector2( 0, 0 )
+3/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 3 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+}, {
+"autotile_coord": Vector2( 1, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 4 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+3/z_index = 0
+4/name = "Star Raider Tileset.png 4"
+4/texture = ExtResource( 1 )
+4/tex_offset = Vector2( 0, 0 )
+4/modulate = Color( 1, 1, 1, 1 )
+4/region = Rect2( 128, 256, 64, 64 )
+4/tile_mode = 0
+4/occluder_offset = Vector2( 0, 0 )
+4/navigation_offset = Vector2( 0, 0 )
+4/shapes = [  ]
+4/z_index = 0
+5/name = "Star Raider Tileset.png 5"
+5/texture = ExtResource( 1 )
+5/tex_offset = Vector2( 0, 0 )
+5/modulate = Color( 1, 1, 1, 1 )
+5/region = Rect2( 192, 256, 64, 64 )
+5/tile_mode = 0
+5/occluder_offset = Vector2( 0, 0 )
+5/navigation_offset = Vector2( 0, 0 )
+5/shapes = [  ]
+5/z_index = 0
+6/name = "Star Raider Tileset.png 6"
+6/texture = ExtResource( 1 )
+6/tex_offset = Vector2( 0, 0 )
+6/modulate = Color( 1, 1, 1, 1 )
+6/region = Rect2( 192, 320, 64, 64 )
+6/tile_mode = 0
+6/occluder_offset = Vector2( 0, 0 )
+6/navigation_offset = Vector2( 0, 0 )
+6/shapes = [  ]
+6/z_index = 0
+7/name = "Star Raider Tileset.png 7"
+7/texture = ExtResource( 1 )
+7/tex_offset = Vector2( 0, 0 )
+7/modulate = Color( 1, 1, 1, 1 )
+7/region = Rect2( 128, 320, 64, 64 )
+7/tile_mode = 0
+7/occluder_offset = Vector2( 0, 0 )
+7/navigation_offset = Vector2( 0, 0 )
+7/shapes = [  ]
+7/z_index = 0
+8/name = "Star Raider Tileset.png 8"
+8/texture = ExtResource( 1 )
+8/tex_offset = Vector2( 0, 0 )
+8/modulate = Color( 1, 1, 1, 1 )
+8/region = Rect2( 64, 256, 64, 64 )
+8/tile_mode = 0
+8/occluder_offset = Vector2( 0, 0 )
+8/navigation_offset = Vector2( 0, 0 )
+8/shapes = [  ]
+8/z_index = 0
+9/name = "Star Raider Tileset.png 9"
+9/texture = ExtResource( 1 )
+9/tex_offset = Vector2( 0, 0 )
+9/modulate = Color( 1, 1, 1, 1 )
+9/region = Rect2( 64, 320, 64, 64 )
+9/tile_mode = 0
+9/occluder_offset = Vector2( 0, 0 )
+9/navigation_offset = Vector2( 0, 0 )
+9/shapes = [  ]
+9/z_index = 0
+10/name = "Star Raider Tileset.png 10"
+10/texture = ExtResource( 1 )
+10/tex_offset = Vector2( 0, 0 )
+10/modulate = Color( 1, 1, 1, 1 )
+10/region = Rect2( 0, 320, 64, 64 )
+10/tile_mode = 0
+10/occluder_offset = Vector2( 0, 0 )
+10/navigation_offset = Vector2( 0, 0 )
+10/shapes = [  ]
+10/z_index = 0
+
+[sub_resource type="CircleShape2D" id=6]
+radius = 18.7311
+
+[sub_resource type="Shader" id=7]
+code = "shader_type particles;
+uniform vec2 cameraPosition;
+uniform float spread;
+uniform float flatness;
+uniform float initial_linear_velocity;
+uniform float initial_angle;
+uniform float angular_velocity;
+uniform float orbit_velocity;
+uniform float linear_accel;
+uniform float radial_accel;
+uniform float tangent_accel;
+uniform float damping;
+uniform float scale;
+uniform float hue_variation;
+uniform float anim_speed;
+uniform float anim_offset;
+uniform float initial_linear_velocity_random;
+uniform float initial_angle_random;
+uniform float angular_velocity_random;
+uniform float orbit_velocity_random;
+uniform float linear_accel_random;
+uniform float radial_accel_random;
+uniform float tangent_accel_random;
+uniform float damping_random;
+uniform float scale_random;
+uniform float hue_variation_random;
+uniform float anim_speed_random;
+uniform float anim_offset_random;
+uniform vec3 emission_box_extents;
+uniform vec4 color_value : hint_color;
+uniform int trail_divisor;
+uniform vec3 gravity;
+uniform sampler2D color_ramp;
+uniform sampler2D scale_texture;
+uniform sampler2D hue_variation_texture;
+
+
+float rand_from_seed(inout uint seed) {
+	int k;
+	int s = int(seed);
+	if (s == 0)
+	s = 305420679;
+	k = s / 127773;
+	s = 16807 * (s - k * 127773) - 2836 * k;
+	if (s < 0)
+		s += 2147483647;
+	seed = uint(s);
+	return float(seed % uint(65536)) / 65535.0;
+}
+
+float rand_from_seed_m1_p1(inout uint seed) {
+	return rand_from_seed(seed) * 2.0 - 1.0;
+}
+
+uint hash(uint x) {
+	x = ((x >> uint(16)) ^ x) * uint(73244475);
+	x = ((x >> uint(16)) ^ x) * uint(73244475);
+	x = (x >> uint(16)) ^ x;
+	return x;
+}
+
+void vertex() {
+	uint base_number = NUMBER / uint(trail_divisor);
+	uint alt_seed = hash(base_number + uint(1) + RANDOM_SEED);
+	float angle_rand = rand_from_seed(alt_seed);
+	float scale_rand = rand_from_seed(alt_seed);
+	float hue_rot_rand = rand_from_seed(alt_seed);
+	float anim_offset_rand = rand_from_seed(alt_seed);
+	float pi = 3.14159;
+	float degree_to_rad = pi / 180.0;
+
+	if (RESTART) {
+		float tex_linear_velocity = 0.0;
+		float tex_angle = 0.0;
+		float tex_anim_offset = 0.0;
+		float spread_rad = spread * degree_to_rad;
+		float angle1_rad = rand_from_seed_m1_p1(alt_seed) * spread_rad;
+		vec3 rot = vec3(cos(angle1_rad), sin(angle1_rad), 0.0);
+		VELOCITY = rot * initial_linear_velocity * mix(1.0, rand_from_seed(alt_seed), initial_linear_velocity_random);
+		float base_angle = (initial_angle + tex_angle) * mix(1.0, angle_rand, initial_angle_random);
+		CUSTOM.x = base_angle * degree_to_rad;
+		CUSTOM.y = 0.0;
+		CUSTOM.z = (anim_offset + tex_anim_offset) * mix(1.0, anim_offset_rand, anim_offset_random);
+		TRANSFORM[3].xyz = vec3(rand_from_seed(alt_seed) * 2.0 - 1.0, rand_from_seed(alt_seed) * 2.0 - 1.0, rand_from_seed(alt_seed) * 2.0 - 1.0) * emission_box_extents;
+		VELOCITY = (EMISSION_TRANSFORM * vec4(VELOCITY, 0.0)).xyz;
+		TRANSFORM = EMISSION_TRANSFORM * TRANSFORM;
+		VELOCITY.z = 0.0;
+		TRANSFORM[3].z = 0.0;
+	} else {
+		CUSTOM.y += DELTA / LIFETIME;
+		float tex_linear_velocity = 0.0;
+		float tex_orbit_velocity = 0.0;
+		float tex_angular_velocity = 0.0;
+		float tex_linear_accel = 0.0;
+		float tex_radial_accel = 0.0;
+		float tex_tangent_accel = 0.0;
+		float tex_damping = 0.0;
+		float tex_angle = 0.0;
+		float tex_anim_speed = 0.0;
+		float tex_anim_offset = 0.0;
+		vec3 force = gravity;
+		vec3 pos = TRANSFORM[3].xyz;
+		pos.z = 0.0;
+		// apply linear acceleration
+		force += length(VELOCITY) > 0.0 ? normalize(VELOCITY) * (linear_accel + tex_linear_accel) * mix(1.0, rand_from_seed(alt_seed), linear_accel_random) : vec3(0.0);
+		// apply radial acceleration
+		vec3 org = EMISSION_TRANSFORM[3].xyz;
+		vec3 diff = pos - org;
+		force += length(diff) > 0.0 ? normalize(diff) * (radial_accel + tex_radial_accel) * mix(1.0, rand_from_seed(alt_seed), radial_accel_random) : vec3(0.0);
+		// apply tangential acceleration;
+		force += length(diff.yx) > 0.0 ? vec3(normalize(diff.yx * vec2(-1.0, 1.0)), 0.0) * ((tangent_accel + tex_tangent_accel) * mix(1.0, rand_from_seed(alt_seed), tangent_accel_random)) : vec3(0.0);
+		// apply attractor forces
+		VELOCITY += force * DELTA;
+		// orbit velocity
+		float orbit_amount = (orbit_velocity + tex_orbit_velocity) * mix(1.0, rand_from_seed(alt_seed), orbit_velocity_random);
+		if (orbit_amount != 0.0) {
+		     float ang = orbit_amount * DELTA * pi * 2.0;
+		     mat2 rot = mat2(vec2(cos(ang), -sin(ang)), vec2(sin(ang), cos(ang)));
+		     TRANSFORM[3].xy -= diff.xy;
+		     TRANSFORM[3].xy += rot * diff.xy;
+		}
+		if (damping + tex_damping > 0.0) {
+			float v = length(VELOCITY);
+			float damp = (damping + tex_damping) * mix(1.0, rand_from_seed(alt_seed), damping_random);
+			v -= damp * DELTA;
+			if (v < 0.0) {
+				VELOCITY = vec3(0.0);
+			} else {
+				VELOCITY = normalize(VELOCITY) * v;
+			}
+		}
+		float base_angle = (initial_angle + tex_angle) * mix(1.0, angle_rand, initial_angle_random);
+		base_angle += CUSTOM.y * LIFETIME * (angular_velocity + tex_angular_velocity) * mix(1.0, rand_from_seed(alt_seed) * 2.0 - 1.0, angular_velocity_random);
+		CUSTOM.x = base_angle * degree_to_rad;
+		CUSTOM.z = (anim_offset + tex_anim_offset) * mix(1.0, anim_offset_rand, anim_offset_random) + CUSTOM.y * (anim_speed + tex_anim_speed) * mix(1.0, rand_from_seed(alt_seed), anim_speed_random);
+	}
+	float tex_scale = textureLod(scale_texture, vec2(CUSTOM.y, 0.0), 0.0).r;
+	float tex_hue_variation = textureLod(hue_variation_texture, vec2(CUSTOM.y, 0.0), 0.0).r;
+	float hue_rot_angle = (hue_variation + tex_hue_variation) * pi * 2.0 * mix(1.0, hue_rot_rand * 2.0 - 1.0, hue_variation_random);
+	float hue_rot_c = cos(hue_rot_angle);
+	float hue_rot_s = sin(hue_rot_angle);
+	mat4 hue_rot_mat = mat4(vec4(0.299, 0.587, 0.114, 0.0),
+			vec4(0.299, 0.587, 0.114, 0.0),
+			vec4(0.299, 0.587, 0.114, 0.0),
+			vec4(0.000, 0.000, 0.000, 1.0)) +
+		mat4(vec4(0.701, -0.587, -0.114, 0.0),
+			vec4(-0.299, 0.413, -0.114, 0.0),
+			vec4(-0.300, -0.588, 0.886, 0.0),
+			vec4(0.000, 0.000, 0.000, 0.0)) * hue_rot_c +
+		mat4(vec4(0.168, 0.330, -0.497, 0.0),
+			vec4(-0.328, 0.035,  0.292, 0.0),
+			vec4(1.250, -1.050, -0.203, 0.0),
+			vec4(0.000, 0.000, 0.000, 0.0)) * hue_rot_s;
+	COLOR = hue_rot_mat * textureLod(color_ramp, vec2(CUSTOM.y, 0.0), 0.0);
+
+	TRANSFORM[0] = vec4(cos(CUSTOM.x), -sin(CUSTOM.x), 0.0, 0.0);
+	TRANSFORM[1] = vec4(sin(CUSTOM.x), cos(CUSTOM.x), 0.0, 0.0);
+	TRANSFORM[2] = vec4(0.0, 0.0, 1.0, 0.0);
+	float base_scale = mix(scale * tex_scale, 1.0, scale_random * scale_rand);
+	if (base_scale == 0.0) {
+		base_scale = 0.000001;
+	}
+	TRANSFORM[0].xyz *= base_scale;
+	TRANSFORM[1].xyz *= base_scale;
+	TRANSFORM[2].xyz *= base_scale;
+	VELOCITY.z = 0.0;
+	TRANSFORM[3].z = 0.0;
+	//TRANSFORM[3].xy += cameraPosition;
+}
+
+"
+
+[sub_resource type="Gradient" id=8]
+offsets = PoolRealArray( 0, 0.762963, 1 )
+colors = PoolColorArray( 1, 1, 1, 1, 0.911111, 0.911111, 0.911111, 0.911111, 0, 0, 0, 0 )
+
+[sub_resource type="GradientTexture" id=9]
+gradient = SubResource( 8 )
+
+[sub_resource type="Curve" id=10]
+min_value = -1.0
+_data = [ Vector2( 0, 0.1078 ), 0.0, 0.0751159, 0, 0, Vector2( 0.51255, 0.00879991 ), 0.0, 0.0, 0, 0, Vector2( 1, 0.1848 ), 0.30527, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=11]
+curve = SubResource( 10 )
+
+[sub_resource type="Curve" id=12]
+_data = [ Vector2( 0, 0.1843 ), 0.0, 3.23995, 0, 0, Vector2( 0.801194, 1 ), -0.133036, -0.133036, 0, 0, Vector2( 1, 0.5737 ), -5.15557, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=13]
+curve = SubResource( 12 )
+
+[sub_resource type="ShaderMaterial" id=14]
+shader = SubResource( 7 )
+shader_param/cameraPosition = Vector2( 0, 0 )
+shader_param/spread = 175.34
+shader_param/flatness = 0.0
+shader_param/initial_linear_velocity = 91.95
+shader_param/initial_angle = 0.0
+shader_param/angular_velocity = 116.86
+shader_param/orbit_velocity = 0.0
+shader_param/linear_accel = 100.0
+shader_param/radial_accel = 0.0
+shader_param/tangent_accel = 0.0
+shader_param/damping = 0.0
+shader_param/scale = 0.1
+shader_param/hue_variation = 0.89
+shader_param/anim_speed = 0.0
+shader_param/anim_offset = 0.0
+shader_param/initial_linear_velocity_random = 0.16
+shader_param/initial_angle_random = 0.0
+shader_param/angular_velocity_random = 1.0
+shader_param/orbit_velocity_random = 0.0
+shader_param/linear_accel_random = 0.52
+shader_param/radial_accel_random = 0.0
+shader_param/tangent_accel_random = 0.0
+shader_param/damping_random = 0.0
+shader_param/scale_random = 1.0
+shader_param/hue_variation_random = 0.0
+shader_param/anim_speed_random = 0.0
+shader_param/anim_offset_random = 0.0
+shader_param/emission_box_extents = Vector3( 1000, 1000, 1 )
+shader_param/color_value = Color( 1, 1, 1, 1 )
+shader_param/trail_divisor = 1
+shader_param/gravity = Vector3( 0, -1e-06, 0 )
+shader_param/color_ramp = SubResource( 9 )
+shader_param/scale_texture = SubResource( 13 )
+shader_param/hue_variation_texture = SubResource( 11 )
+
+[sub_resource type="ShaderMaterial" id=15]
+shader = ExtResource( 4 )
+shader_param/cameraPosition = Vector2( 0, 0 )
+shader_param/starsFront = ExtResource( 8 )
+shader_param/starsBack = ExtResource( 7 )
+shader_param/nebulaFront = ExtResource( 6 )
+shader_param/nebulaBack = ExtResource( 5 )
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Map" type="TileMap" parent="."]
+tile_set = SubResource( 5 )
+format = 1
+tile_data = PoolIntArray( -65535, 2, 0, -65534, 2, 0, 1, 3, 0, 2, 3, 0, 13, 2, 0, 14, 2, 0, 65536, 1, 0, 65537, 1, 0, 65538, 1, 0, 65539, 0, 0, 65543, 2, 0, 65549, 3, 0, 65550, 3, 0, 131075, 0, 0, 131079, 3, 0, 196611, 0, 0, 196612, 0, 0, 196613, 0, 0, 196614, 0, 0, 196615, 0, 0, 262147, 1, 0, 262148, 1, 0, 262149, 1, 0, 262150, 1, 0, 262151, 0, 0, 262153, 2, 0, 262157, 0, 0, 262160, 9, 0, 327687, 0, 0, 327689, 3, 0, 327692, 0, 0, 327693, 0, 0, 327694, 1, 0, 393223, 0, 0, 393224, 1, 0, 393225, 1, 0, 393226, 1, 0, 393227, 1, 0, 393228, 1, 0, 393229, 1, 0, 458753, 2, 0, 458759, 0, 0, 524289, 3, 0, 524291, 2, 0, 524292, 2, 0, 524295, 0, 0, 524298, 2, 0, 589827, 3, 0, 589828, 3, 0, 589831, 0, 0, 589834, 3, 0, 655363, 0, 0, 655364, 0, 0, 655367, 0, 0, 655374, 0, 0, 720897, 1, 0, 720898, 0, 0, 720899, 0, 0, 720900, 0, 0, 720901, 0, 0, 720902, 0, 0, 720903, 0, 0, 720904, 0, 0, 720905, 0, 0, 720906, 0, 0, 720907, 0, 0, 720908, 0, 0, 720909, 0, 0, 720910, 1, 0, 786434, 1, 0, 786435, 1, 0, 786436, 0, 0, 786437, 0, 0, 786438, 0, 2, 786439, 0, 3, 786440, 0, 3, 786441, 0, 0, 786442, 0, 0, 786443, 1, 0, 786444, 1, 0, 786445, 1, 0, 851972, 1, 0, 851973, 0, 0, 851974, 0, 0, 851975, 0, 0, 851976, 0, 0, 851977, 0, 0, 851978, 1, 0, 917509, 1, 0, 917510, 0, 0, 917511, 0, 0, 917512, 0, 0, 917513, 1, 0, 983046, 1, 0, 983047, 0, 0, 983048, 0, 0, 983059, 2, 0, 983060, 2, 0, 983061, 2, 0, 983062, 2, 0, 983063, 2, 0, 1048583, 0, 0, 1048584, 1, 0, 1048595, 2, 0, 1048596, 3, 0, 1048597, 3, 0, 1048598, 3, 0, 1048599, 2, 0, 1114119, 0, 0, 1114125, 8, 0, 1114131, 2, 0, 1114132, 0, 0, 1114133, 0, 0, 1114134, 0, 0, 1114135, 2, 0, 1179650, 8, 0, 1179655, 0, 0, 1179667, 2, 0, 1179668, 0, 0, 1179669, 0, 2, 1179670, 0, 0, 1179671, 2, 0, 1245191, 0, 0, 1245195, 6, 0, 1245196, 7, 0, 1245203, 2, 0, 1245204, 0, 0, 1245205, 0, 0, 1245206, 0, 0, 1245207, 2, 0, 1310727, 0, 0, 1310731, 7, 0, 1310732, 6, 0, 1310739, 3, 0, 1310740, 2, 0, 1310741, 0, 0, 1310742, 2, 0, 1310743, 2, 0, 1376262, 2, 0, 1376263, 0, 0, 1376276, 2, 0, 1376277, 0, 0, 1376278, 3, 0, 1376279, 2, 0, 1441793, 2, 0, 1441794, 2, 0, 1441795, 2, 0, 1441796, 2, 0, 1441797, 2, 0, 1441798, 3, 0, 1441799, 0, 0, 1441800, 0, 0, 1441801, 2, 0, 1441802, 2, 0, 1441803, 2, 0, 1441804, 2, 0, 1441805, 2, 0, 1441806, 2, 0, 1441807, 2, 0, 1441808, 2, 0, 1441809, 2, 0, 1441810, 2, 0, 1441811, 2, 0, 1441812, 2, 0, 1441813, 0, 0, 1441814, 0, 0, 1441815, 2, 0, 1507329, 2, 0, 1507330, 3, 0, 1507331, 3, 0, 1507332, 3, 0, 1507333, 3, 0, 1507334, 0, 0, 1507335, 0, 0, 1507336, 0, 0, 1507337, 3, 0, 1507338, 3, 0, 1507339, 3, 0, 1507340, 3, 0, 1507341, 3, 0, 1507342, 3, 0, 1507343, 3, 0, 1507344, 3, 0, 1507345, 3, 0, 1507346, 3, 0, 1507347, 3, 0, 1507348, 3, 0, 1507349, 0, 0, 1507350, 2, 0, 1507351, 2, 0, 1572865, 2, 0, 1572866, 0, 0, 1572867, 0, 0, 1572868, 0, 0, 1572869, 0, 0, 1572870, 0, 0, 1572871, 0, 0, 1572872, 0, 0, 1572873, 0, 0, 1572874, 0, 0, 1572875, 0, 0, 1572876, 0, 0, 1572877, 0, 0, 1572878, 0, 0, 1572879, 0, 0, 1572880, 0, 0, 1572881, 0, 0, 1572882, 0, 0, 1572883, 0, 0, 1572884, 0, 0, 1572885, 0, 0, 1572886, 2, 0, 1572887, 3, 0, 1638401, 3, 0, 1638402, 2, 0, 1638403, 1, 0, 1638404, 1, 0, 1638405, 2, 0, 1638406, 2, 0, 1638407, 2, 0, 1638408, 2, 0, 1638409, 2, 0, 1638410, 2, 0, 1638411, 2, 0, 1638412, 0, 0, 1638413, 0, 0, 1638414, 0, 0, 1638415, 0, 0, 1638416, 0, 0, 1638417, 0, 0, 1638418, 0, 0, 1638419, 0, 0, 1638420, 2, 0, 1638421, 2, 0, 1638422, 2, 0, 1703938, 3, 0, 1703941, 3, 0, 1703942, 3, 0, 1703943, 3, 0, 1703944, 3, 0, 1703945, 3, 0, 1703946, 3, 0, 1703947, 2, 0, 1703948, 2, 0, 1703949, 2, 0, 1703950, 2, 0, 1703951, 2, 0, 1703952, 2, 0, 1703953, 2, 0, 1703954, 2, 0, 1703955, 2, 0, 1703956, 2, 0, 1703957, 2, 0, 1703958, 3, 0, 1769483, 3, 0, 1769484, 3, 0, 1769485, 3, 0, 1769486, 3, 0, 1769487, 3, 0, 1769488, 3, 0, 1769489, 3, 0, 1769490, 3, 0, 1769491, 3, 0, 1769492, 3, 0, 1769493, 3, 0 )
+
+[node name="Map2" type="TileMap" parent="."]
+tile_set = SubResource( 5 )
+format = 1
+tile_data = PoolIntArray( 65537, 5, 0, 65539, 10, 0, 196611, 9, 0, 196615, 8, 0, 262147, 7, 0, 262149, 5, 0, 262157, 4, 0, 327694, 9, 0, 393226, 5, 0, 655363, 4, 0, 655364, 4, 0, 655374, 6, 0, 720897, 536870917, 0, 720899, 10, 0, 786436, 7, 0, 786439, 5, 0, 786443, 536870917, 0, 851978, 7, 0, 917512, 10, 0, 917513, 6, 0, 983048, 7, 0, 1048584, 6, 0, 1114132, 10, 0, 1114133, 4, 0, 1114134, 9, 0, 1179668, 6, 0, 1245204, 6, 0, 1441800, 6, 0, 1441813, 7, 0, 1441814, 4, 0, 1507334, 8, 0, 1507336, 536870917, 0, 1572866, 8, 0, 1572872, 7, 0, 1638403, 10, 0, 1638404, 7, 0, 1638412, 9, 0, 1638414, 7, 0 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 1051.71, 705.204 )
+scale = Vector2( 2.49684, 2.60911 )
+texture = ExtResource( 2 )
+
+[node name="KinematicBody2D" type="KinematicBody2D" parent="."]
+position = Vector2( 32, 96 )
+script = ExtResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KinematicBody2D"]
+shape = SubResource( 6 )
+
+[node name="Sprite" type="Sprite" parent="KinematicBody2D"]
+position = Vector2( -4, -16 )
+scale = Vector2( 1.3, 1.3 )
+texture = ExtResource( 1 )
+vframes = 30
+hframes = 15
+frame = 60
+
+[node name="Camera2D" type="Camera2D" parent="KinematicBody2D"]
+offset = Vector2( 0, -100 )
+current = true
+zoom = Vector2( 0.65, 0.65 )
+drag_margin_h_enabled = false
+drag_margin_v_enabled = false
+drag_margin_left = 0.3
+drag_margin_top = 0.3
+drag_margin_right = 0.3
+drag_margin_bottom = 0.3
+editor_draw_drag_margin = true
+
+[node name="sparkles" type="Particles2D" parent="KinematicBody2D/Camera2D"]
+position = Vector2( -0.568817, -5.68799 )
+amount = 20
+lifetime = 5.0
+preprocess = 600.0
+speed_scale = 0.2
+randomness = 1.0
+local_coords = false
+process_material = SubResource( 14 )
+texture = ExtResource( 2 )
+
+[node name="postLayer" type="CanvasLayer" parent="."]
+
+[node name="ripplePlusBack" type="TextureRect" parent="postLayer"]
+material = SubResource( 15 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 9 )
+stretch_mode = 1
+__meta__ = {
+"_edit_lock_": true
+}

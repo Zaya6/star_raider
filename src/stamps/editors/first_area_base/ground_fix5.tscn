@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://stamps/editors/first_area_base/ground_fill4.tscn" type="PackedScene" id=1]
+
+[node name="StampEditor" instance=ExtResource( 1 )]
+stampName = "ground_fix5"
+Probability = Vector2( 1, 10 )
+
+[node name="Pattern" parent="." index="0"]
+tile_data = PoolIntArray( 0, 1, 0, 65536, 4, 0, 131072, 1, 0, 196608, 4, 0, 262144, 1, 0 )
+height = 5
+
+[node name="Stamp" parent="." index="1"]
+tile_data = PoolIntArray( 65536, 1, 0, 131072, 4, 0, 196608, 1, 0 )

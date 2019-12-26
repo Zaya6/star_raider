@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://stamps/editors/first_area_mid/wall_fill3.tscn" type="PackedScene" id=1]
+
+[node name="StampEditor" instance=ExtResource( 1 )]
+StampLibraryPath = "res://stamps/libraries/first_area_mid.json"
+stampName = "wall_fill4"
+Probability = Vector2( 1, 2 )
+
+[node name="Pattern" parent="." index="0"]
+tile_data = PoolIntArray( 0, 18, 0, 1, 1, 0, 2, 18, 0, 65537, 16, 0 )
+width = 3
+height = 2
+
+[node name="Stamp" parent="." index="1"]
+visible = false
+tile_data = PoolIntArray( 1, 16, 0, 65537, 16, 0 )
+height = 2

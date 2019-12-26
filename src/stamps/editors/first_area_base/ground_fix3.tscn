@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://stamps/editors/first_area_base/ground_fix2.tscn" type="PackedScene" id=1]
+
+[node name="StampEditor" instance=ExtResource( 1 )]
+stampName = "ground_fix3"
+Probability = Vector2( 1, 100 )
+
+[node name="Pattern" parent="." index="0"]
+tile_data = PoolIntArray( 1, 1, 0, 2, 4, 0, 3, 1, 0, 65536, 1, 0, 65537, 1, 0, 65538, 4, 0, 65539, 1, 0, 131072, 4, 0, 131073, 4, 0, 131074, 4, 0, 131075, 1, 0, 196608, 1, 0, 196609, 1, 0, 196610, 1, 0 )

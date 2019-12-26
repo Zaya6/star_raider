@@ -32,3 +32,6 @@ func _on_returnPixels_timeout():
 	returnOrigin = true
 func _on_fadeBlack_timeout():
 	fadeBlack = true
+func _on_exitScene_timeout():
+	#get_tree().change_scene("res://test/test level grass.tscn")
+	get_tree().change_scene("res://stamps/generation_test.tscn")

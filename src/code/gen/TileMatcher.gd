@@ -9,6 +9,7 @@ var baseTilemap:TileMap
 var stampTilemap:TileMap
 var library:Array
 var tilesPlaced:Dictionary
+var startTime = -1.0
 
 func _init(ntilemap:TileMap, libraryName:String, nstampTilemap:TileMap=null):
 	baseTilemap = ntilemap
@@ -17,7 +18,10 @@ func _init(ntilemap:TileMap, libraryName:String, nstampTilemap:TileMap=null):
 	# Allow to pass a seperate tilemap to stamp onto, so 
 	# things can be added to a level but on another layer
 	#, possible maybe to use for object spawning by creating a faux tilemap
-	if nstampTilemap == null: stampTilemap = baseTilemap
+	if nstampTilemap == null:
+		 stampTilemap = baseTilemap
+	else:
+		stampTilemap = nstampTilemap
 
 func _ready():
 	pass
@@ -27,6 +31,10 @@ func _ready():
 #it's faster to loop through the layout once and 
 #then loop through each stamp instead of the other way around
 func generate():
+	#set the start time if one hasn't been set yet
+	if startTime == -1.0:
+		startTime = OS.get_unix_time()
+	library.shuffle()
 	var die: int = randi()%10
 	var cover:Rect2 = baseTilemap.get_used_rect()
 	var usedCells = baseTilemap.get_used_cells()
@@ -57,16 +65,19 @@ func generate():
 		
 		for stamp in library:
 			#check first if it succeeds
-			prob = stamp["prob"]
-			
 			
 			# check if stamp is active, then check probability, then check if the stamp has passed its limit
-			if not stamp["active"] or rand_range(0,prob[1]) > prob[0] or stamp["totalSpawns"] >= stamp["limit"]:
+			if not stamp["active"]:
+				continue
+			prob = stamp["prob"]
+			if rand_range(0,prob[1]) > prob[0]: 
+				continue
+			if stamp["limit"] > 0 and stamp["totalSpawns"] >= stamp["limit"]:
 				continue
 			
 			patternWidth = int(stamp["pattern_width"])
 			patternHeight = stamp["pattern_height"]
-			patternArea = patternWidth * patternHeight
+			patternArea = patternWidth * patternHeight*10
 			patternKey = stamp["pattern_key"]
 			patternSize = patternKey.size()
 			j = 0
@@ -75,7 +86,10 @@ func generate():
 				checkX = x - j % patternWidth 
 				checkY = y - j / patternWidth 
 				for key in patternKey:
-					if baseTilemap.get_cell( checkX + key[0], checkY + key[1] ) == key[2]:
+					var tileToCheck = baseTilemap.get_cell( checkX + key[0], checkY + key[1] )
+					if key[2] == 0 and tileToCheck >= 0:
+						unlock -= 1
+					elif tileToCheck == key[2]:
 						unlock -= 1
 					else:
 						break
@@ -90,7 +104,11 @@ func generate():
 		i += loopiter
 	
 	# return relevant data to determine if generation should continue or stop
-	return [ stampTilemap.get_used_rect(), tilesPlaced, matchFound ]
+	# [0] is a rect2 covering the area of generation
+	# [1] is a dictionary of tiles placed
+	# [2] is true if anything generated during this pass
+	# [3] is the time elapsed since generation started in seconds
+	return [ stampTilemap.get_used_rect(), tilesPlaced, matchFound, OS.get_unix_time() - startTime ]
 
 
 func pressStamp(stampKey, x, y):

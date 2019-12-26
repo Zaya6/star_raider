@@ -1,0 +1,87 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Art/Tilesets/Star Raider Tileset.png" type="Texture" id=1]
+
+[node name="WesternPlainsTileset" type="Node2D"]
+
+[node name="00-all" type="Sprite" parent="."]
+position = Vector2( 32.8539, 33.3672 )
+texture = ExtResource( 1 )
+vframes = 30
+hframes = 15
+
+[node name="01-red" type="Sprite" parent="."]
+position = Vector2( 110.368, 33.3672 )
+texture = ExtResource( 1 )
+vframes = 30
+hframes = 15
+frame = 1
+
+[node name="02-blue" type="Sprite" parent="."]
+position = Vector2( 185.83, 33.3672 )
+texture = ExtResource( 1 )
+vframes = 30
+hframes = 15
+frame = 2
+
+[node name="03-cyan" type="Sprite" parent="."]
+position = Vector2( 261.291, 33.3672 )
+texture = ExtResource( 1 )
+vframes = 30
+hframes = 15
+frame = 3
+
+[node name="04-green" type="Sprite" parent="."]
+position = Vector2( 335.212, 33.3672 )
+texture = ExtResource( 1 )
+vframes = 30
+hframes = 15
+frame = 4
+
+[node name="05-yellow" type="Sprite" parent="."]
+position = Vector2( 407.593, 33.3672 )
+texture = ExtResource( 1 )
+vframes = 30
+hframes = 15
+frame = 5
+
+[node name="06-orange" type="Sprite" parent="."]
+position = Vector2( 481.001, 33.3672 )
+texture = ExtResource( 1 )
+vframes = 30
+hframes = 15
+frame = 6
+
+[node name="07-purple" type="Sprite" parent="."]
+position = Vector2( 555.949, 33.3672 )
+texture = ExtResource( 1 )
+vframes = 30
+hframes = 15
+frame = 7
+
+[node name="grass" type="Node2D" parent="."]
+position = Vector2( 32, 111 )
+
+[node name="1" type="Sprite" parent="grass"]
+texture = ExtResource( 1 )
+vframes = 30
+hframes = 15
+frame = 15
+
+[node name="2" type="Sprite" parent="grass"]
+texture = ExtResource( 1 )
+vframes = 30
+hframes = 15
+frame = 16
+
+[node name="3" type="Sprite" parent="grass"]
+texture = ExtResource( 1 )
+vframes = 30
+hframes = 15
+frame = 17
+
+[node name="4" type="Sprite" parent="grass"]
+texture = ExtResource( 1 )
+vframes = 30
+hframes = 15
+frame = 18

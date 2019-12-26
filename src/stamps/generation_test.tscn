@@ -1,50 +1,275 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=20 format=2]
 
-[ext_resource path="res://src/obj/Level.gd" type="Script" id=1]
-[ext_resource path="res://src/art/tiles/TestTileset.tres" type="TileSet" id=2]
-[ext_resource path="res://src/obj/ControlCam.gd" type="Script" id=3]
-[ext_resource path="res://src/obj/ui/LevelEditorUI.gd" type="Script" id=4]
+[ext_resource path="res://code/Level.gd" type="Script" id=1]
+[ext_resource path="res://Art/Tilesets/westernplainstileset.tres" type="TileSet" id=2]
+[ext_resource path="res://code/misc/ControlCam.gd" type="Script" id=3]
+[ext_resource path="res://test/test_reflect.shader" type="Shader" id=4]
+[ext_resource path="res://Art/backgrounds/nebula_test_2.png" type="Texture" id=5]
+[ext_resource path="res://Art/backgrounds/nebula_test_1.png" type="Texture" id=6]
+[ext_resource path="res://Art/Utility/starfield2.png" type="Texture" id=7]
+[ext_resource path="res://Art/Utility/starfield1.png" type="Texture" id=8]
+[ext_resource path="res://Art/Utility/white_pixle.png" type="Texture" id=9]
+[ext_resource path="res://code/ui/LevelEditorUI.gd" type="Script" id=10]
+[ext_resource path="res://fonts/monofur/monof56.ttf" type="DynamicFontData" id=11]
+[ext_resource path="res://Art/Menu/loading tile test.png" type="Texture" id=12]
+[ext_resource path="res://fonts/Copperplate Gothic Bold Regular.ttf" type="DynamicFontData" id=13]
+[ext_resource path="res://Art/Player/nova_test2.png" type="Texture" id=14]
+
+[sub_resource type="ShaderMaterial" id=1]
+shader = ExtResource( 4 )
+shader_param/cameraPosition = Vector2( 0, 0 )
+shader_param/starsFront = ExtResource( 8 )
+shader_param/starsBack = ExtResource( 7 )
+shader_param/nebulaFront = ExtResource( 6 )
+shader_param/nebulaBack = ExtResource( 5 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 29
+use_mipmaps = true
+use_filter = true
+font_data = ExtResource( 11 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 52
+use_mipmaps = true
+use_filter = true
+font_data = ExtResource( 11 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 38
+use_mipmaps = true
+use_filter = true
+font_data = ExtResource( 13 )
+
+[sub_resource type="Animation" id=5]
+resource_name = "loading"
+length = 0.5
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("ground:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 184, -1 ), Vector2( 53.303, -1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("nova:rect_position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.2, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 423.294, 1531.77 ), Vector2( 423.294, 1518.82 ), Vector2( 423.294, 1531.77 ) ]
+}
 
 [node name="traincar_test" type="Node2D"]
 
 [node name="level" type="Node2D" parent="."]
 script = ExtResource( 1 )
 
-[node name="TileMap" type="TileMap" parent="level"]
+[node name="ground" type="TileMap" parent="level"]
 position = Vector2( -1, 0 )
 tile_set = ExtResource( 2 )
 format = 1
-tile_data = PoolIntArray( -65542, 1, 0, -65541, 1, 0, -65540, 1, 0, -65539, 1, 0, -65538, 1, 0, -131071, 1, 0, -131070, 1, 0, -131065, 1, 0, -131064, 1, 0, -131063, 1, 0, -131062, 1, 0, -131061, 1, 0, -131060, 1, 0, -8, 1, 0, -7, 1, 0, -1, 1, 0, -65536, 1, 0, -65533, 1, 0, -65531, 1, 0, -65530, 1, 0, -65523, 1, 0, 65526, 1, 0, 65527, 1, 0, 65534, 1, 0, 0, 1, 0, 4, 1, 0, 5, 1, 0, 14, 1, 0, 131060, 1, 0, 131061, 1, 0, 131070, 1, 0, 65536, 1, 0, 65540, 1, 0, 65541, 1, 0, 65542, 1, 0, 65545, 1, 0, 65546, 1, 0, 65551, 1, 0, 196595, 1, 0, 196605, 1, 0, 131072, 1, 0, 131075, 1, 0, 131076, 1, 0, 131077, 1, 0, 131079, 1, 0, 131080, 1, 0, 131083, 1, 0, 131087, 1, 0, 262131, 1, 0, 262141, 1, 0, 196609, 1, 0, 196611, 1, 0, 196612, 1, 0, 196613, 1, 0, 196614, 1, 0, 196615, 1, 0, 196616, 1, 0, 196619, 1, 0, 196623, 1, 0, 327667, 1, 0, 327677, 1, 0, 262145, 1, 0, 262146, 1, 0, 262147, 1, 0, 262148, 1, 0, 262149, 1, 0, 262150, 1, 0, 262151, 1, 0, 262152, 1, 0, 262155, 1, 0, 262159, 1, 0, 393204, 1, 0, 393213, 1, 0, 393215, 1, 0, 327680, 1, 0, 327681, 1, 0, 327682, 1, 0, 327684, 1, 0, 327685, 1, 0, 327686, 1, 0, 327687, 1, 0, 327688, 1, 0, 327689, 1, 0, 327690, 1, 0, 327695, 1, 0, 458740, 1, 0, 458749, 1, 0, 458750, 1, 0, 393217, 1, 0, 393219, 1, 0, 393220, 1, 0, 393221, 1, 0, 393222, 1, 0, 393223, 1, 0, 393224, 1, 0, 393225, 1, 0, 393226, 1, 0, 393231, 1, 0, 524277, 1, 0, 524278, 1, 0, 524284, 1, 0, 524286, 1, 0, 458753, 1, 0, 458755, 1, 0, 458757, 1, 0, 458758, 1, 0, 458759, 1, 0, 458760, 1, 0, 458761, 1, 0, 458762, 1, 0, 458766, 1, 0, 589815, 1, 0, 589816, 1, 0, 589817, 1, 0, 589820, 1, 0, 589822, 1, 0, 524288, 1, 0, 524291, 1, 0, 524293, 1, 0, 524294, 1, 0, 524295, 1, 0, 524296, 1, 0, 524297, 1, 0, 524298, 1, 0, 524302, 1, 0, 655354, 1, 0, 655355, 1, 0, 655357, 1, 0, 655358, 1, 0, 655359, 1, 0, 589828, 1, 0, 589829, 1, 0, 589830, 1, 0, 589831, 1, 0, 589832, 1, 0, 589833, 1, 0, 589838, 1, 0, 720892, 1, 0, 720893, 1, 0, 720894, 1, 0, 720895, 1, 0, 655360, 1, 0, 655361, 1, 0, 655362, 1, 0, 655363, 1, 0, 655364, 1, 0, 655365, 1, 0, 655366, 1, 0, 655367, 1, 0, 655368, 1, 0, 655369, 1, 0, 655373, 1, 0, 786431, 1, 0, 720896, 1, 0, 720900, 1, 0, 720901, 1, 0, 720902, 1, 0, 720903, 1, 0, 720904, 1, 0, 720908, 1, 0, 786433, 1, 0, 786434, 1, 0, 786435, 1, 0, 786436, 1, 0, 786437, 1, 0, 786438, 1, 0, 786439, 1, 0, 786440, 1, 0, 786441, 1, 0, 786442, 1, 0, 786443, 1, 0 )
+tile_data = PoolIntArray( 2621447, 4, 0, 2686983, 4, 0, 2752515, 4, 0, 2752518, 4, 0, 2752519, 4, 0, 2752523, 4, 0, 2818051, 4, 0, 2818053, 4, 0, 2818054, 4, 0, 2818055, 4, 0, 2818056, 4, 0, 2818057, 4, 0, 2818059, 4, 0, 2883587, 4, 0, 2883588, 4, 0, 2883589, 4, 0, 2883590, 4, 0, 2883591, 4, 0, 2883592, 4, 0, 2883593, 4, 0, 2883594, 4, 0, 2883595, 4, 0 )
+
+[node name="decor" type="TileMap" parent="level"]
+tile_set = ExtResource( 2 )
+cell_y_sort = true
+format = 1
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2( 591.492, -834.692 )
+position = Vector2( 668.232, 50.7823 )
 current = true
-zoom = Vector2( 5, 5 )
+zoom = Vector2( 3, 3 )
 script = ExtResource( 3 )
+setZoom = 2.0
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="postLayer" type="CanvasLayer" parent="."]
 editor/display_folded = true
 
-[node name="Control" type="Control" parent="CanvasLayer"]
+[node name="ripplePlusBack" type="TextureRect" parent="postLayer"]
+material = SubResource( 1 )
 anchor_right = 1.0
 anchor_bottom = 1.0
-script = ExtResource( 4 )
+texture = ExtResource( 9 )
+stretch_mode = 1
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="ui" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="ui"]
+editor/display_folded = true
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 10 )
+__meta__ = {
+"_edit_lock_": true
+}
 Level = NodePath("../../level")
 
-[node name="hSplit" type="HSplitContainer" parent="CanvasLayer/Control"]
+[node name="hSplit" type="HSplitContainer" parent="ui/Control"]
 margin_right = 120.0
 margin_bottom = 25.0
 
-[node name="RegenButton" type="Button" parent="CanvasLayer/Control/hSplit"]
-margin_right = 84.0
-margin_bottom = 25.0
-rect_min_size = Vector2( 25, 0 )
+[node name="RegenButton" type="Button" parent="ui/Control/hSplit"]
+margin_right = 162.0
+margin_bottom = 56.0
+rect_min_size = Vector2( 156, 0 )
+custom_fonts/font = SubResource( 2 )
 text = "Regenerate"
 
-[node name="Label" type="Label" parent="CanvasLayer/Control/hSplit"]
-margin_left = 96.0
-margin_top = 5.0
-margin_right = 136.0
-margin_bottom = 19.0
-text = "11111"
-[connection signal="pressed" from="CanvasLayer/Control/hSplit/RegenButton" to="CanvasLayer/Control" method="_on_RegenButton_pressed"]
+[node name="Label" type="Label" parent="ui/Control/hSplit"]
+margin_left = 174.0
+margin_right = 278.0
+margin_bottom = 56.0
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "1111"
+
+[node name="loading" type="ColorRect" parent="ui"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="ground" type="Control" parent="ui/loading"]
+editor/display_folded = true
+margin_left = 184.0
+margin_top = -1.0
+margin_right = 224.002
+margin_bottom = 39.0
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="landTile" type="TextureRect" parent="ui/loading/ground"]
+margin_left = 469.393
+margin_top = 1612.48
+margin_right = 600.393
+margin_bottom = 1743.48
+texture = ExtResource( 12 )
+stretch_mode = 1
+
+[node name="landTile2" type="TextureRect" parent="ui/loading/ground"]
+margin_left = 730.79
+margin_top = 1612.48
+margin_right = 861.79
+margin_bottom = 1743.48
+texture = ExtResource( 12 )
+stretch_mode = 1
+
+[node name="landTile8" type="TextureRect" parent="ui/loading/ground"]
+margin_left = 1123.65
+margin_top = 1612.48
+margin_right = 1254.65
+margin_bottom = 1743.48
+texture = ExtResource( 12 )
+stretch_mode = 1
+
+[node name="landTile11" type="TextureRect" parent="ui/loading/ground"]
+margin_left = -55.3172
+margin_top = 1612.48
+margin_right = 75.6828
+margin_bottom = 1743.48
+texture = ExtResource( 12 )
+stretch_mode = 1
+
+[node name="landTile6" type="TextureRect" parent="ui/loading/ground"]
+margin_left = 862.062
+margin_top = 1612.48
+margin_right = 993.062
+margin_bottom = 1743.48
+texture = ExtResource( 12 )
+stretch_mode = 1
+
+[node name="landTile7" type="TextureRect" parent="ui/loading/ground"]
+margin_left = 1254.92
+margin_top = 1612.48
+margin_right = 1385.92
+margin_bottom = 1743.48
+texture = ExtResource( 12 )
+stretch_mode = 1
+
+[node name="landTile12" type="TextureRect" parent="ui/loading/ground"]
+margin_left = 75.9548
+margin_top = 1612.48
+margin_right = 206.955
+margin_bottom = 1743.48
+texture = ExtResource( 12 )
+stretch_mode = 1
+
+[node name="landTile3" type="TextureRect" parent="ui/loading/ground"]
+margin_left = 206.561
+margin_top = 1612.48
+margin_right = 337.561
+margin_bottom = 1743.48
+texture = ExtResource( 12 )
+stretch_mode = 1
+
+[node name="landTile4" type="TextureRect" parent="ui/loading/ground"]
+margin_left = 337.977
+margin_top = 1612.48
+margin_right = 468.977
+margin_bottom = 1743.48
+texture = ExtResource( 12 )
+stretch_mode = 1
+
+[node name="landTile5" type="TextureRect" parent="ui/loading/ground"]
+margin_left = 600.349
+margin_top = 1612.48
+margin_right = 731.349
+margin_bottom = 1743.48
+texture = ExtResource( 12 )
+stretch_mode = 1
+
+[node name="landTile9" type="TextureRect" parent="ui/loading/ground"]
+margin_left = 993.211
+margin_top = 1612.48
+margin_right = 1124.21
+margin_bottom = 1743.48
+texture = ExtResource( 12 )
+stretch_mode = 1
+
+[node name="landTile10" type="TextureRect" parent="ui/loading/ground"]
+margin_left = -185.758
+margin_top = 1612.48
+margin_right = -54.7577
+margin_bottom = 1743.48
+texture = ExtResource( 12 )
+stretch_mode = 1
+
+[node name="loading" type="Label" parent="ui/loading"]
+margin_left = 432.959
+margin_top = 993.163
+margin_right = 669.959
+margin_bottom = 1036.16
+custom_fonts/font = SubResource( 4 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "LOADING..."
+
+[node name="nova" type="TextureRect" parent="ui/loading"]
+margin_left = 423.294
+margin_top = 1531.77
+margin_right = 620.294
+margin_bottom = 1728.77
+texture = ExtResource( 14 )
+stretch_mode = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="ui/loading"]
+autoplay = "loading"
+anims/loading = SubResource( 5 )
+[connection signal="pressed" from="ui/Control/hSplit/RegenButton" to="ui/Control" method="_on_RegenButton_pressed"]

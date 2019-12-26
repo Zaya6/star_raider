@@ -30,11 +30,11 @@ func saveStamp():
 	
 	for pos in pattern.get_used_cells():
 		var cell = pattern.get_cellv(pos)
-		if cell == -2: cell = -1
+		if cell == 1: cell = -1
 		pKey.append([int(pos.x),int(pos.y),cell])
 	for pos in stamp.get_used_cells():
 		var cell = stamp.get_cellv(pos)
-		if cell == -2: cell = -1
+		if cell == 1: cell = -1
 		sKey.append([int(pos.x),int(pos.y),cell])
 	
 	stampData = {

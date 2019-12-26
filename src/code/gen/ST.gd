@@ -5,13 +5,14 @@ extends Node
 var currentLevel = null
 
 #### stamp loading and parsing ####
+var stampLibraryPath = "res://stamps/libraries/"
 var stampLibraries = {}
 
 func _init():
 	#start loading libraries at start
-	loadStampLibrary()
+	loadStampLibrary(stampLibraryPath)
 
-func loadStampLibrary(path="res://src/stamps/libraries/"):
+func loadStampLibrary(path="res://stamps/libraries/"):
 	var dir = Directory.new()
 	var libraries = {}
 	dir.open(path)

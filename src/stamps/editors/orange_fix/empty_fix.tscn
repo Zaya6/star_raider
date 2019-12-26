@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://stamps/editors/first_area_base/ground_fix12.tscn" type="PackedScene" id=1]
+
+[node name="StampEditor" instance=ExtResource( 1 )]
+StampLibraryPath = "res://stamps/libraries/orange_fix.json"
+stampName = "empty_fix"
+Probability = Vector2( 1, 1 )
+
+[node name="Pattern" parent="." index="0"]
+tile_data = PoolIntArray( 0, 6, 0 )
+width = 1
+height = 1
+
+[node name="Stamp" parent="." index="1"]
+tile_data = PoolIntArray( 0, 1, 0 )
+width = 1
+height = 1

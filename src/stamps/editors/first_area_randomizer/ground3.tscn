@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://stamps/editors/first_area_randomizer/ground2.tscn" type="PackedScene" id=1]
+
+[node name="StampEditor" instance=ExtResource( 1 )]
+stampName = "ground3"
+
+[node name="Stamp" parent="." index="1"]
+tile_data = PoolIntArray( 0, 10, 0 )

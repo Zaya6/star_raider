@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://stamps/editors/first_area_mid/empty_fix.tscn" type="PackedScene" id=1]
+
+[node name="StampEditor" instance=ExtResource( 1 )]
+StampLibraryPath = "res://stamps/libraries/first_area_mid.json"
+stampName = "ground_fix_top1"
+
+[node name="Pattern" parent="." index="0"]
+tile_data = PoolIntArray( 0, 4, 0, 65536, 0, 0 )
+height = 2
+
+[node name="Stamp" parent="." index="1"]
+tile_data = PoolIntArray( 0, 8, 0 )
+height = 2
