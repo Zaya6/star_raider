@@ -1,12 +1,10 @@
 extends Node
 
-# A singleton class that holds information used between scenes
-
-var currentLevel = null
-
-#### stamp loading and parsing ####
+#### Tile Matcher singleton to hold stamp libraries ####
+#### stamp loading and parsing                      ####
 var stampLibraryPath = "res://stamps/libraries/"
 var stampLibraries = {}
+
 
 func _init():
 	#start loading libraries at start
@@ -18,7 +16,7 @@ func loadStampLibrary(path="res://stamps/libraries/"):
 	dir.open(path)
 	dir.list_dir_begin()
 	
-	print("Loading stamp libraries")
+	print_debug("Loading stamp libraries")
 	# Get every file in directory
 	while true:
 		var file = dir.get_next()
@@ -30,7 +28,7 @@ func loadStampLibrary(path="res://stamps/libraries/"):
 			name.erase(name.length()-5,name.length())
 			processStampLibrary(name, path+file)
 	dir.list_dir_end()
-	print("done")
+	print_debug("done loading stamps")
 	
 
 func processStampLibrary(name, path):

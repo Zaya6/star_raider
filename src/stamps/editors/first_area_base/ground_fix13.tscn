@@ -1,14 +1,18 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://stamps/editors/first_area_base/ground_fix12.tscn" type="PackedScene" id=1]
+[ext_resource path="res://code/Editors/StampEditor.gd" type="Script" id=2]
 
-[node name="StampEditor" index="0" instance=ExtResource( 1 )]
+[node name="StampEditor" instance=ExtResource( 1 )]
+script = ExtResource( 2 )
+StampLibraryPath = "res://stamps/libraries/first_area_base.json"
 stampName = "ground_fix13"
 
 [node name="Pattern" parent="." index="0"]
 tile_data = PoolIntArray( 0, 4, 0, 1, 4, 0, 2, 4, 0, 3, 4, 0, 4, 4, 0, 65536, 4, 0, 65537, 4, 0, 65538, 4, 0, 65539, 4, 0, 65540, 4, 0, 131072, 4, 0, 131073, 4, 0, 131074, 4, 0, 131075, 4, 0, 131076, 4, 0, 196608, 4, 0, 196609, 4, 0, 196610, 4, 0, 196611, 4, 0, 196612, 4, 0, 262144, 4, 0, 262145, 4, 0, 262146, 4, 0, 262147, 4, 0, 262148, 4, 0, 327680, 4, 0, 327681, 4, 0, 327682, 4, 0, 327683, 4, 0, 327684, 4, 0, 393216, 4, 0, 393217, 4, 0, 393218, 4, 0, 393219, 4, 0, 393220, 4, 0, 458752, 4, 0, 458753, 4, 0, 458754, 4, 0, 458755, 4, 0, 458756, 4, 0, 524288, 4, 0, 524289, 4, 0, 524290, 4, 0, 524291, 4, 0, 524292, 4, 0, 589824, 4, 0, 589825, 4, 0, 589826, 4, 0, 589827, 4, 0, 589828, 4, 0 )
+lineColor = Color( 1, 0, 1, 0.6 )
 width = 5
 height = 10
 
 [node name="Stamp" parent="." index="1"]
-tile_data = PoolIntArray( 0, 4, 0, 1, 4, 0, 65536, 6, 0, 65537, 4, 0, 65540, 6, 0, 131072, 6, 0, 131073, 6, 0, 196609, 6, 0, 196612, 6, 0, 262148, 6, 0, 327684, 6, 0, 393216, 6, 0, 393217, 6, 0, 393220, 6, 0, 458752, 6, 0, 458753, 6, 0, 458756, 6, 0, 524288, 6, 0, 524292, 6, 0 )
+tile_data = PoolIntArray( 0, 4, 0, 1, 4, 0, 65536, 6, 0, 65537, 4, 0, 65540, 6, 0, 131072, 6, 0, 131073, 6, 0, 196609, 6, 0, 196612, 6, 0, 262148, 6, 0, 327684, 6, 0, 393216, 6, 0, 393217, 6, 0, 393220, 6, 0, 458752, 6, 0, 458753, 4, 0, 458756, 4, 0, 524288, 4, 0, 524292, 4, 0 )

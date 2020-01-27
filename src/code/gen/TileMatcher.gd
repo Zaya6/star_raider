@@ -10,10 +10,13 @@ var stampTilemap:TileMap
 var library:Array
 var tilesPlaced:Dictionary
 var startTime = -1.0
+var rand = RandomNumberGenerator.new()
+var genSeed = -1
 
 func _init(ntilemap:TileMap, libraryName:String, nstampTilemap:TileMap=null):
+	rand.randomize()
 	baseTilemap = ntilemap
-	library = ST.stampLibraries[libraryName].duplicate(true)
+	library = TM.stampLibraries[libraryName].duplicate(true)
 	
 	# Allow to pass a seperate tilemap to stamp onto, so 
 	# things can be added to a level but on another layer
@@ -26,7 +29,9 @@ func _init(ntilemap:TileMap, libraryName:String, nstampTilemap:TileMap=null):
 func _ready():
 	pass
 
-# TODO: Add ability to pass a different tilemap to stamp to.
+func setSeed(desiredSeed):
+	genSeed = desiredSeed
+	rand.set_seed(desiredSeed)
 
 #it's faster to loop through the layout once and 
 #then loop through each stamp instead of the other way around
@@ -34,8 +39,8 @@ func generate():
 	#set the start time if one hasn't been set yet
 	if startTime == -1.0:
 		startTime = OS.get_unix_time()
-	library.shuffle()
-	var die: int = randi()%10
+	#library.shuffle()
+	var die: int = rand.randi()%10
 	var cover:Rect2 = baseTilemap.get_used_rect()
 	var usedCells = baseTilemap.get_used_cells()
 	usedCells.push_back(Vector2(0,0))
@@ -70,7 +75,7 @@ func generate():
 			if not stamp["active"]:
 				continue
 			prob = stamp["prob"]
-			if rand_range(0,prob[1]) > prob[0]: 
+			if rand.randi_range(0,prob[1]) > prob[0]:
 				continue
 			if stamp["limit"] > 0 and stamp["totalSpawns"] >= stamp["limit"]:
 				continue
