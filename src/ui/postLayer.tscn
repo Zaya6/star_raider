@@ -1,0 +1,32 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://test/test_reflect.shader" type="Shader" id=1]
+[ext_resource path="res://Art/backgrounds/nebula_test_2.png" type="Texture" id=2]
+[ext_resource path="res://Art/backgrounds/nebula_test_1.png" type="Texture" id=3]
+[ext_resource path="res://Art/Utility/starfield2.png" type="Texture" id=4]
+[ext_resource path="res://Art/Utility/starfield1.png" type="Texture" id=5]
+[ext_resource path="res://Art/Utility/white_pixle.png" type="Texture" id=6]
+
+[sub_resource type="ShaderMaterial" id=1]
+shader = ExtResource( 1 )
+shader_param/cameraPosition = Vector2( 0, 0 )
+shader_param/starsFront = ExtResource( 5 )
+shader_param/starsBack = ExtResource( 4 )
+shader_param/nebulaFront = ExtResource( 3 )
+shader_param/nebulaBack = ExtResource( 2 )
+
+[node name="postLayer" type="CanvasLayer"]
+editor/display_folded = true
+
+[node name="ripplePlusBack" type="TextureRect" parent="." groups=[
+"waterPost",
+]]
+material = SubResource( 1 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+texture = ExtResource( 6 )
+stretch_mode = 1
+__meta__ = {
+"_edit_lock_": true
+}

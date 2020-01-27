@@ -1,6 +1,6 @@
 [gd_scene load_steps=20 format=2]
 
-[ext_resource path="res://code/Level.gd" type="Script" id=1]
+[ext_resource path="res://code/levels/firstArea_story2.gd" type="Script" id=1]
 [ext_resource path="res://Art/Tilesets/westernplainstileset.tres" type="TileSet" id=2]
 [ext_resource path="res://code/misc/ControlCam.gd" type="Script" id=3]
 [ext_resource path="res://test/test_reflect.shader" type="Shader" id=4]
@@ -70,7 +70,7 @@ tracks/1/keys = {
 "values": [ Vector2( 423.294, 1531.77 ), Vector2( 423.294, 1518.82 ), Vector2( 423.294, 1531.77 ) ]
 }
 
-[node name="traincar_test" type="Node2D"]
+[node name="generationTest" type="Node2D"]
 
 [node name="level" type="Node2D" parent="."]
 script = ExtResource( 1 )
@@ -81,7 +81,7 @@ tile_set = ExtResource( 2 )
 format = 1
 tile_data = PoolIntArray( 2621447, 4, 0, 2686983, 4, 0, 2752515, 4, 0, 2752518, 4, 0, 2752519, 4, 0, 2752523, 4, 0, 2818051, 4, 0, 2818053, 4, 0, 2818054, 4, 0, 2818055, 4, 0, 2818056, 4, 0, 2818057, 4, 0, 2818059, 4, 0, 2883587, 4, 0, 2883588, 4, 0, 2883589, 4, 0, 2883590, 4, 0, 2883591, 4, 0, 2883592, 4, 0, 2883593, 4, 0, 2883594, 4, 0, 2883595, 4, 0 )
 
-[node name="decor" type="TileMap" parent="level"]
+[node name="play" type="TileMap" parent="level"]
 tile_set = ExtResource( 2 )
 cell_y_sort = true
 format = 1
@@ -116,7 +116,7 @@ script = ExtResource( 10 )
 __meta__ = {
 "_edit_lock_": true
 }
-Level = NodePath("../../level")
+Level = NodePath("../../../generationTest/level")
 
 [node name="hSplit" type="HSplitContainer" parent="ui/Control"]
 margin_right = 120.0
@@ -138,6 +138,7 @@ custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "1111"
 
 [node name="loading" type="ColorRect" parent="ui"]
+editor/display_folded = true
 visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0

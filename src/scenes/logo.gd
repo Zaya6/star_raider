@@ -5,6 +5,11 @@ var pixels = []
 var returnOrigin = false
 var fadeBlack = false
 
+func _init():
+	var size = OS.get_screen_size() if OS.window_fullscreen or OS.window_maximized else OS.window_size
+	var basis = size.x if size.x > size.y else size.y
+	ST.scaleRatio = 64.0/basis as float
+
 func _ready():
 	randomize()
 	var teleport_pos = $teleport.get_position()
@@ -33,5 +38,4 @@ func _on_returnPixels_timeout():
 func _on_fadeBlack_timeout():
 	fadeBlack = true
 func _on_exitScene_timeout():
-	#get_tree().change_scene("res://test/test level grass.tscn")
-	get_tree().change_scene("res://stamps/generation_test.tscn")
+	get_tree().change_scene("res://test/RegionTest.tscn")

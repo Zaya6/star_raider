@@ -4,7 +4,7 @@
 
 [node name="StampEditor" instance=ExtResource( 1 )]
 stampName = "grass2"
-limitSpawns = -1
+Probability = Vector2( 1, 500 )
 
 [node name="Stamp" parent="." index="1"]
 tile_data = PoolIntArray( 0, 26, 0 )

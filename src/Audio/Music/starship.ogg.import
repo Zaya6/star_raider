@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/starship.ogg-4389a0ec8e658c6ec264862739185301.oggstr"
+
+[deps]
+
+source_file="res://Audio/Music/starship.ogg"
+dest_files=[ "res://.import/starship.ogg-4389a0ec8e658c6ec264862739185301.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

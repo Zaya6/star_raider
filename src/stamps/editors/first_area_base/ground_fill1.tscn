@@ -9,7 +9,6 @@
 script = ExtResource( 2 )
 StampLibraryPath = "res://stamps/libraries/first_area_base.json"
 stampName = "ground_fill1"
-Probability = Vector2( 1, 20 )
 
 [node name="Pattern" parent="." index="0"]
 tile_set = ExtResource( 3 )

@@ -9,10 +9,35 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "KinematicBody2D",
+"class": "EntityController",
+"language": "GDScript",
+"path": "res://code/controllers/EntityController.gd"
+}, {
 "base": "Node2D",
 "class": "Level",
 "language": "GDScript",
 "path": "res://code/Level.gd"
+}, {
+"base": "Node",
+"class": "LevelGenStage",
+"language": "GDScript",
+"path": "res://code/LevelGenStage.gd"
+}, {
+"base": "Reference",
+"class": "Region",
+"language": "GDScript",
+"path": "res://code/Region.gd"
+}, {
+"base": "Node",
+"class": "RegionTile",
+"language": "GDScript",
+"path": "res://code/RegionTile.gd"
+}, {
+"base": "Reference",
+"class": "SingleTileMatcher",
+"language": "GDScript",
+"path": "res://code/gen/SingleTileMatcher.gd"
 }, {
 "base": "Reference",
 "class": "TileMatcher",
@@ -20,7 +45,12 @@ _global_script_classes=[ {
 "path": "res://code/gen/TileMatcher.gd"
 } ]
 _global_script_class_icons={
+"EntityController": "",
 "Level": "",
+"LevelGenStage": "",
+"Region": "",
+"RegionTile": "",
+"SingleTileMatcher": "",
 "TileMatcher": ""
 }
 
@@ -32,15 +62,16 @@ config/icon="res://icon.png"
 
 [autoload]
 
-ST="*res://code/gen/ST.gd"
+TM="*res://code/gen/TM.gd"
+ST="*res://code/ST.gd"
+MUSIC="*res://objects/MusicManager.tscn"
 
 [display]
 
-window/size/width=1080
-window/size/height=1920
+window/size/width=1920
+window/size/height=1080
 window/per_pixel_transparency/enabled=true
 window/handheld/orientation="portrait"
-window/stretch/mode="2d"
 window/stretch/aspect="keep"
 
 [input]
@@ -91,6 +122,11 @@ ui_downleft={
 ui_downright={
 "deadzone": 0.5,
 "events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777353,"unicode":0,"echo":false,"script":null)
+ ]
+}
+rest_turn={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777355,"unicode":0,"echo":false,"script":null)
  ]
 }
 
