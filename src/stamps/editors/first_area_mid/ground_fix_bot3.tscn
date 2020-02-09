@@ -7,20 +7,15 @@
 
 [node name="StampEditor" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
+StampLibraryPath = "res://stamps/libraries/first_area_mid.json"
 stampName = "ground_fix_bot3"
-
-[node name="Pattern" parent="." index="0"]
-tile_set = ExtResource( 3 )
-cell_y_sort = true
-format = 1
-tile_data = PoolIntArray( 0, 8, 0, 65536, 16, 0 )
-script = ExtResource( 4 )
-width = 1
 
 [node name="Stamp" parent="." index="1"]
 tile_set = ExtResource( 3 )
 cell_y_sort = true
 format = 1
+tile_data = PoolIntArray( 0, 14, 0 )
 script = ExtResource( 4 )
 lineColor = Color( 0.00784314, 0, 1, 0.6 )
 width = 1
+height = 2

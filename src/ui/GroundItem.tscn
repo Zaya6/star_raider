@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://ui/GroundItem.gd" type="Script" id=1]
 [ext_resource path="res://fonts/arial.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://Art/Level Items/item_bag.png" type="Texture" id=3]
 
 [sub_resource type="DynamicFont" id=1]
 size = 25
@@ -9,28 +10,42 @@ outline_size = 1
 outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 2 )
 
-[node name="GroundItem" type="HSplitContainer"]
-margin_right = 256.0
-margin_bottom = 64.0
-rect_min_size = Vector2( 256, 64 )
+[node name="GroundItem" type="TextureButton"]
+anchor_right = 1.0
+rect_min_size = Vector2( 256, 128 )
 size_flags_horizontal = 3
 script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="TextureButton" type="TextureButton" parent="."]
-margin_right = 122.0
-margin_bottom = 64.0
+[node name="container" type="HBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_min_size = Vector2( 256, 128 )
+size_flags_horizontal = 3
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="icon" type="TextureRect" parent="container"]
+margin_right = 958.0
+margin_bottom = 128.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
+texture = ExtResource( 3 )
 expand = true
 stretch_mode = 5
 
-[node name="Label" type="Label" parent="."]
-margin_left = 134.0
-margin_top = 17.0
-margin_right = 256.0
-margin_bottom = 46.0
+[node name="Label" type="Label" parent="container"]
+margin_left = 962.0
+margin_right = 1920.0
+margin_bottom = 128.0
+rect_min_size = Vector2( 0, 128 )
 size_flags_horizontal = 3
 size_flags_vertical = 6
 custom_fonts/font = SubResource( 1 )
-text = "Sack"
-[connection signal="pressed" from="TextureButton" to="." method="_on_TextureButton_pressed"]
+text = "Bag"
+valign = 1
+[connection signal="pressed" from="." to="." method="_on_GroundItem_pressed"]

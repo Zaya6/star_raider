@@ -1,13 +1,20 @@
+class_name PlayerController
 extends EntityController
 
 var moveVector = Vector2(0,0)
 var mouseDown = false
 
+func _init():
+	ST.currentPlayer = self
+
 # overwrite entity turn processing, because turns 
 # start from the player
 func executeTurn()->void:
 	pass
-	
+
+func returnFocus():
+	$Camera2D.make_current()
+
 func _onMoveEnded():
 	if moveVector == Vector2.ZERO:
 		$Particles2D.emitting = false

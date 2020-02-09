@@ -1,14 +1,17 @@
 extends Level
 
+#objects for spawning
+onready var itemBagPacked = preload("res://objects/Interactables/itemBag.tscn")
+onready var nagaPacked = preload("res://objects/Enemies/Naga.tscn")
+
 var levelSize = 60
 
 func _ready():
-	addStage(LevelGenStage.new($ground,"first_area_base", funcref(self, "_stage1_endcheck") ))
-
-	addStage(LevelGenStage.new($ground,"orange_fix", funcref(self, "_fail_endcheck") ))
-	addStage(LevelGenStage.new($ground,"first_area_decor", funcref(self, "_25thsecond_endcheck"), $play ))
-	addStage(LevelGenStage.new($ground,"first_area_mid", funcref(self, "_5thsecond_endcheck") ))
-	addStage(LevelGenStage.new($ground,"first_area_randomizer", funcref(self, "_25thsecond_endcheck") ))
+	addStage(LevelGenStage.new($guide,"first_area_base", funcref(self, "_stage1_endcheck") ))
+	addStage(LevelGenStage.new($guide,"orange_fix", funcref(self, "_fail_endcheck") ))
+	addStage(LevelGenStage.new($guide,"first_area_walls", funcref(self, "_3rdsecond_endcheck")))
+	addStage(LevelGenStage.new($guide,"first_area_mid", funcref(self, "_25thsecond_endcheck"),$ground ))
+	addStage(LevelGenStage.new($guide,"first_area_decor", funcref(self, "_immediate_endcheck"), $play ))
 
 	startGenerating()
 	#_genFinishedCallback()
@@ -16,7 +19,8 @@ func _ready():
 
 func _stage1_endcheck(feedback):
 	if feedback[0].size.y > levelSize or feedback[3] > levelSize/10:
-		print_debug("level size: ", feedback[0].size)
+		print(spawnMatchNum("level_mechanicals","simple_spawn1x1", itemBagPacked, 2))
+		print(spawnMatchNum("level_mechanicals","simple_spawn3x3", nagaPacked, 3, Vector2(1,1),false,0))
 		return true
 	else:
 		return false
@@ -40,11 +44,15 @@ func _25thsecond_endcheck(feedback):
 		return true
 	else:
 		return false
+func _3rdsecond_endcheck(feedback):
+	if feedback[3] > 0.3:
+		return true
+	else:
+		return false
 func _5thsecond_endcheck(feedback):
 	if feedback[3] > 0.5:
 		return true
 	else:
 		return false
-
 
 

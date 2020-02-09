@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://stamps/editors/first_area_mid/wall_start_bottom.tscn" type="PackedScene" id=1]
+[ext_resource path="res://stamps/editors/first_area_mid/wall_grass_fix_bot1.tscn" type="PackedScene" id=1]
 [ext_resource path="res://code/Editors/StampEditor.gd" type="Script" id=2]
 [ext_resource path="res://Art/Tilesets/westernplainstileset.tres" type="TileSet" id=3]
 [ext_resource path="res://code/Editors/TileEditor.gd" type="Script" id=4]
@@ -8,17 +8,24 @@
 [node name="StampEditor" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
 StampLibraryPath = "res://stamps/libraries/first_area_mid.json"
-stampName = "wall_fix1"
-Probability = Vector2( 1, 1 )
+stampName = "wall_empty_fix_bot1"
+Probability = Vector2( 1, 4 )
 
 [node name="Pattern" parent="." index="0"]
 tile_set = ExtResource( 3 )
 cell_y_sort = true
 format = 1
-tile_data = PoolIntArray( 0, 18, 0, 65536, 16, 0 )
+tile_data = PoolIntArray( 0, 2, 0, 65536, 1, 0 )
 script = ExtResource( 4 )
+lineColor = Color( 1, 0, 1, 0.6 )
 width = 1
 height = 2
 
 [node name="Stamp" parent="." index="1"]
-tile_data = PoolIntArray( 0, 16, 0 )
+tile_set = ExtResource( 3 )
+cell_y_sort = true
+format = 1
+script = ExtResource( 4 )
+lineColor = Color( 0.00784314, 0, 1, 0.6 )
+width = 1
+height = 2

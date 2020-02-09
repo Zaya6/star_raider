@@ -27,12 +27,14 @@ func _init(ntilemap:TileMap, libraryName, stampName, niterable=false):
 	if stamp.empty(): push_error(stampName + " not found!")
 	patternKey = stamp["pattern_key"]
 
+# 0=up,1=right,2=south,3=left
 func parse(direction = 0):
 	var matches = []
 	var usedRect:Rect2 = tilemap.get_used_rect()
 	var offsetx:int = stamp["pattern_width"]
 	var offsety:int = stamp["pattern_height"]
 	var prob = stamp["prob"]
+	var limit = stamp["limit"]
 	
 	#loop modification
 	var i = lastI #i is named because it can switch betwen x and y
@@ -45,14 +47,14 @@ func parse(direction = 0):
 	match direction:
 		0: # match starting from top, default behavior. case to limt confusion
 			pass
-		1: # match from bottom
+		2: # match from bottom
 			#start i at y bottom and subtract y value
 			i = iend-1
 			idir = -1
-		2: # match from left side
+		3: # match from left side
 			iend = usedRect.size.x+offsetx*2
 			jend = usedRect.size.y+offsety*2
-		3: # match from right side
+		1: # match from right side
 			iend = usedRect.size.x+offsetx*2
 			jend = usedRect.size.y+offsety*2
 			i = iend-1
@@ -62,17 +64,17 @@ func parse(direction = 0):
 			jreset = j
 
 	while i < iend and i > -1:
-		
 		j = jreset
 		while j < jend and j > -1:
-			#print(i," ",j)
+			#check stamp limit, skip loops if at limit
+			if limit > 0 and matches.size() >= limit: break
 			# if probability check fails, skip to next coord
 			if rand.randf_range(0,prob[1]) < prob[0]:
 				var finalX
 				var finalY
 				# depending on the direction, [i,j] might be [x,y], or [y,x]
 				# if it's matching from top(default) or bottom i is y and j is x
-				if direction < 2:
+				if direction == 0 or direction == 2:
 					finalX = j + usedRect.position.x-offsetx
 					finalY = i + usedRect.position.y-offsety
 				# if it's matching from the left or right side then j is y and i is x
@@ -92,6 +94,9 @@ func parse(direction = 0):
 	
 	matchList = matches
 	return matches
+
+func getMatches():
+	return matchList
 
 #loops through the key tiles in the pattern, if all match it unlocks and matches
 func checkMatch(x,y):
@@ -116,6 +121,9 @@ func setSeed(desiredSeed):
 #func pressStampOnce(stampTilemap, modifier = 1):
 #	var selector = matchList.size()/modifier
 #	var pos = matchList[
+
+func pressStampv(vector:Vector2, stilemap=null):
+	pressStamp(vector.x,vector.y, stilemap)
 
 func pressStamp(x, y, stilemap=null):
 	if stilemap == null: stilemap = tilemap

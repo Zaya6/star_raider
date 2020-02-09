@@ -1,12 +1,10 @@
 extends Area2D
 
-var exitDirection = [false,false,false,false]
-
-func _init(dir = -1):
-	setExitDirection(dir)
+# directions : [up,right,down,left] --clockwise from top
+var connection = [false,false,false,false]
 
 func _ready():
-	pass
+	set_position(ST.currentLevel.resetPositionToMap(get_position())+Vector2(0,2))
 
 func _on_LevelExit_body_entered(body):
 	if body.is_in_group("player"):
@@ -15,25 +13,28 @@ func _on_LevelExit_body_entered(body):
 			get_tree().reload_current_scene()
 			print_debug("empty exit")
 		else:
-			ST.currentRegion.moveDir(exitDirection)
+			ST.currentRegion.moveDir(connection)
 	
 
+# a function to check if there has not been a connection set to another level
 func isEmpty():
-	return exitDirection == [false,false,false,false]
+	return connection == [false,false,false,false]
 
-func setExitDirection(dir = -1): #default is south
+# connect this exit to another level in the region
+# 0=up,1=right,2=south,3=left
+func setconnection(dir = -1): #default is south
 	match dir:
 		-1:
 			push_error("Warning, no exit direction set")
 		0: # north
-			exitDirection = [true,false,false,false]
+			connection = [true,false,false,false]
 			$faces/up.show()
 		1: # east
-			exitDirection = [false,true,false,false]
+			connection = [false,true,false,false]
 			$faces/right.show()
 		2: # south
-			exitDirection = [false,false,true,false]
+			connection = [false,false,true,false]
 			$faces/down.show()
 		3: # west
-			exitDirection = [false,false,false,true]
+			connection = [false,false,false,true]
 			$faces/left.show()

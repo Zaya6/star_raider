@@ -16,7 +16,6 @@ shader_param/nebulaFront = ExtResource( 3 )
 shader_param/nebulaBack = ExtResource( 2 )
 
 [node name="postLayer" type="CanvasLayer"]
-editor/display_folded = true
 
 [node name="ripplePlusBack" type="TextureRect" parent="." groups=[
 "waterPost",

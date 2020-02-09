@@ -13,12 +13,14 @@ var scaleRatio = 1
 
 var currentLevel:Level = null
 var currentRegion: Region = null
+var currentPlayer: PlayerController = null
 var tree = null
 
 # Need to transition most things to this
 var settings = {
 	"logbarOpen": true,
-	"groundViewerOpen": true
+	"groundViewerOpen": true,
+	"showGeneration": true
 }
 
 func _init():

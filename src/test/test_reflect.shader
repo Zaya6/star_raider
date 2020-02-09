@@ -6,11 +6,11 @@ uniform sampler2D starsBack;
 uniform sampler2D nebulaFront;
 uniform sampler2D nebulaBack;
 
-vec3 getBackground(vec2 uv, float TIME, vec2 offset){
+vec3 getBackground(vec2 uv, float time, vec2 offset){
 	vec3 black = vec3(0.);
 	//background 
-	vec2 wiggleF = vec2 ( .0005*cos(TIME*20.0+500. * uv.y), .005*cos(TIME*10.0-1000. * uv.y));
-	vec2 wiggleB = vec2 ( .0005*cos(TIME*20.0+100. * uv.y), .005*cos(TIME*10.0-100. * uv.y));
+	vec2 wiggleF = vec2 ( .0005*cos(time*20.0+500. * uv.y), .005*cos(time*10.0-1000. * uv.y));
+	vec2 wiggleB = vec2 ( .0005*cos(time*20.0+100. * uv.y), .005*cos(time*10.0-100. * uv.y));
 	
 	vec3 sf = textureLod(starsFront, offset + vec2(uv.x * 1.2, uv.y *1.8) + wiggleB, 0.).rgb;
 	vec3 sb = textureLod(starsBack, offset + vec2(uv.x * 1.5, uv.y *2.) + wiggleB, 0.).rgb*.7;

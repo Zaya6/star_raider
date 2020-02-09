@@ -129,13 +129,9 @@ func _checkTileNav(cell:int)->bool:
 	match cell:
 		-1:
 			return false
-		16:
+		2:
 			return false
-		17:
-			return false
-		18:
-			return false
-		19:
+		3:
 			return false
 	return true
 

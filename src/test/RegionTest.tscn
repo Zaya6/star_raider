@@ -1,12 +1,11 @@
 [gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://test/RegionTest.gd" type="Script" id=1]
-[ext_resource path="res://Art/Tilesets/westernplainstileset.tres" type="TileSet" id=2]
+[ext_resource path="res://test/region_tileset.tres" type="TileSet" id=2]
 
 [node name="RegionTest" type="Node2D"]
 script = ExtResource( 1 )
 
-[node name="regionMap" type="TileMap" parent="."]
+[node name="region" type="TileMap" parent="."]
 tile_set = ExtResource( 2 )
 format = 1
-tile_data = PoolIntArray( 1507334, 4, 0, 1507337, 4, 0, 1572870, 4, 0, 1572873, 4, 0, 1638406, 4, 0, 1638407, 4, 0, 1638408, 4, 0, 1638409, 4, 0, 1703940, 4, 0, 1703941, 4, 0, 1703942, 4, 0, 1703943, 4, 0, 1703944, 4, 0, 1703945, 4, 0, 1703946, 4, 0, 1703947, 4, 0 )

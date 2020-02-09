@@ -65,3 +65,7 @@ func openCloseLogbar():
 func _on_logToggle_pressed():
 	ST.settings["logbarOpen"] = not ST.settings["logbarOpen"]
 	openCloseLogbar()
+
+
+func _on_menuButton_pressed():
+	get_tree().reload_current_scene()

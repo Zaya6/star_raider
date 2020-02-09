@@ -7,14 +7,15 @@
 
 [node name="StampEditor" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
+StampLibraryPath = "res://stamps/libraries/first_area_decor.json"
 stampName = "tree1"
-Probability = Vector2( 1, 1000 )
+Probability = Vector2( 1, 300 )
 
 [node name="Stamp" parent="." index="1"]
 tile_set = ExtResource( 3 )
 cell_y_sort = true
 format = 1
-tile_data = PoolIntArray( 0, 21, 0 )
+tile_data = PoolIntArray( 0, 26, 0 )
 script = ExtResource( 4 )
 lineColor = Color( 0.00784314, 0, 1, 0.6 )
 width = 1

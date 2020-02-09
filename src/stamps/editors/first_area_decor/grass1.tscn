@@ -5,10 +5,10 @@
 [node name="StampEditor" instance=ExtResource( 1 )]
 StampLibraryPath = "res://stamps/libraries/first_area_decor.json"
 stampName = "grass1"
-Probability = Vector2( 1, 500 )
+Probability = Vector2( 1, 50 )
 
 [node name="Pattern" parent="." index="0"]
 tile_data = PoolIntArray( 0, 4, 0 )
 
 [node name="Stamp" parent="." index="1"]
-tile_data = PoolIntArray( 0, 25, 0 )
+tile_data = PoolIntArray( 0, 31, 0 )

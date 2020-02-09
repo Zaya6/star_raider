@@ -1,5 +1,7 @@
 class_name Region
 
+# TODO: Find simpler way to force no empty tiles on region
+
 var rand = RandomNumberGenerator.new()
 var allowEmpty = true
 var levels = []

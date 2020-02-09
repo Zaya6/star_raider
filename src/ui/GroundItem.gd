@@ -1,12 +1,15 @@
-extends HSplitContainer
+extends TextureButton
 
 var groundObject
 
 func setIcon(texture):
-	$TextureButton.texture_normal = texture
+	$container/icon.set_texture(texture)
 
 func setGroundObject(object):
 	groundObject = object
 
-func _on_TextureButton_pressed():
-	groundObject.activate()
+
+
+
+func _on_GroundItem_pressed():
+	print("pressed item: ", groundObject.name)

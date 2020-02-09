@@ -7,6 +7,7 @@ export(Vector2) var Probability = Vector2(1,1)
 export(int) var limitSpawns = -1
 export(bool) var rotation = false
 export(bool) var turnOff = false
+export(bool) var removeStamp = false
 export(bool) var saveStamp = false
 
 #internal variables
@@ -19,7 +20,34 @@ func _process(delta):
 	pass
 	if saveStamp:
 		saveStamp()
-		saveStamp = !saveStamp
+		saveStamp = false
+	if removeStamp:
+		removeStamp()
+		removeStamp = false
+
+func removeStamp():
+	var library = []
+	var newLibrary = []
+	var file = File.new()
+	
+	if file.file_exists(StampLibraryPath):
+		print("existing library found, loading...")
+		file.open(StampLibraryPath, file.READ_WRITE)
+		library = parse_json(file.get_as_text())
+		file.close()
+		
+		# loop through library and remove stamp
+		for stamp in library:
+			if stamp["name"] != stampName:
+				newLibrary.append(stamp)
+			else:
+				print("removing stamp from library")
+
+		file.open(StampLibraryPath, file.WRITE)
+		file.store_string(to_json(newLibrary))
+		file.close()
+	else:
+		print("library doesn't yet exist, no changes made'")
 
 func saveStamp():
 	print("saving stamp")

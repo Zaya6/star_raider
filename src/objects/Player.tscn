@@ -3,7 +3,7 @@
 [ext_resource path="res://code/controllers/PlayerController.gd" type="Script" id=1]
 [ext_resource path="res://Art/particles/dust.png" type="Texture" id=2]
 [ext_resource path="res://Art/Player/nova_shadow.png" type="Texture" id=3]
-[ext_resource path="res://Art/Tilesets/Star Raider Tileset 1.1.1.png" type="Texture" id=4]
+[ext_resource path="res://Art/Tilesets/Star Raider Tileset.png" type="Texture" id=4]
 [ext_resource path="res://code/misc/CameraPostProcess.gd" type="Script" id=5]
 [ext_resource path="res://animations/entities/reset.anim" type="Animation" id=6]
 [ext_resource path="res://animations/entities/walk.anim" type="Animation" id=7]
@@ -72,7 +72,6 @@ texture = ExtResource( 3 )
 position = Vector2( -1, -21 )
 
 [node name="faces" type="Node2D" parent="artCenter"]
-editor/display_folded = true
 scale = Vector2( 1, 0.95 )
 
 [node name="up" type="Sprite" parent="artCenter/faces"]
@@ -137,6 +136,7 @@ frame = 12
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true
 zoom = Vector2( 0.8, 0.8 )
+drag_margin_v_enabled = true
 editor_draw_drag_margin = true
 script = ExtResource( 5 )
 

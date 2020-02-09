@@ -5,6 +5,7 @@ var assignedLevel = null
 var levelSeed = 0
 var defaultLevels = []
 
+# directions : [up,right,down,left] --clockwise from top
 var connections = [false,false,false,false]
 var gen
 

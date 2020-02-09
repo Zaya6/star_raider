@@ -1,33 +1,28 @@
 extends Level
 
 #objects for spawning
-onready var itemSackObj = preload("res://objects/Interactables/itemSack.tscn")
+onready var itemBagPacked = preload("res://objects/Interactables/itemBag.tscn")
+onready var nagaPacked = preload("res://objects/Enemies/Naga.tscn")
 
 var levelSize = 20
 
 func _ready():
 	autoGenPlayer = false
-#	rand.set_seed(1111)
-#	levelSeed = 1111
-	addStage(LevelGenStage.new($ground,"first_area_base", funcref(self, "_stage1_endcheck")))
-
-	addStage(LevelGenStage.new($ground,"orange_fix", funcref(self, "_fail_endcheck") ))
-	addStage(LevelGenStage.new($ground,"first_area_decor", funcref(self, "_25thsecond_endcheck"), $play ))
-	addStage(LevelGenStage.new($ground,"first_area_mid", funcref(self, "_5thsecond_endcheck") ))
-	addStage(LevelGenStage.new($ground,"first_area_randomizer", funcref(self, "_25thsecond_endcheck") ))
-
-	startGenerating()
+	addStage(LevelGenStage.new($guide,"first_area_base", funcref(self, "_stage1_endcheck") ))
+	addStage(LevelGenStage.new($guide,"orange_fix", funcref(self, "_fail_endcheck") ))
+	addStage(LevelGenStage.new($guide,"first_area_walls", funcref(self, "_3rdsecond_endcheck")))
+	addStage(LevelGenStage.new($guide,"first_area_mid", funcref(self, "_25thsecond_endcheck"),$ground ))
+	addStage(LevelGenStage.new($guide,"first_area_decor", funcref(self, "_immediate_endcheck"), $play ))
 	
+	startGenerating()
+
+func _onFinished():
+	print("done")
 
 func _stage1_endcheck(feedback):
 	if feedback[0].size.y > levelSize or feedback[3] > levelSize/10:
-		
-		#place item sacks
-		#not needed for first level, first level can only go up
-#		var itemSackMatcher1 = SingleTileMatcher.new($ground,"level_mechanicals", "itemSack1")
-#		var itemSackMatcher2 = SingleTileMatcher.new($ground,"level_mechanicals", "itemSack2")
-#		var itemSackMatcher3 = SingleTileMatcher.new($ground,"level_mechanicals", "itemSack3")
-		
+		print(spawnMatchNum("level_mechanicals","simple_spawn1x1", itemBagPacked, 1))
+		print(spawnMatchNum("level_mechanicals","simple_spawn3x3", nagaPacked, 1, Vector2(1,1),false,0))
 		return true
 	else:
 		return false
@@ -36,6 +31,10 @@ func _fail_endcheck(feedback):
 		return true
 	else:
 		return false
+
+func _immediate_endcheck(feedback):
+	return true
+
 func _1second_endcheck(feedback):
 	if feedback[3] > 1:
 		return true
@@ -46,9 +45,13 @@ func _25thsecond_endcheck(feedback):
 		return true
 	else:
 		return false
+func _3rdsecond_endcheck(feedback):
+	if feedback[3] > 0.3:
+		return true
+	else:
+		return false
 func _5thsecond_endcheck(feedback):
 	if feedback[3] > 0.5:
 		return true
 	else:
 		return false
-

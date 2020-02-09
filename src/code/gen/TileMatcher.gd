@@ -95,9 +95,9 @@ func generate():
 					if key[2] == 0 and tileToCheck >= 0:
 						unlock -= 1
 					elif tileToCheck == key[2]:
-						unlock -= 1
+						unlock -= 1 
 					else:
-						break
+						break 
 				
 				if unlock <= 0:
 					pressStamp(stamp["stamp_key"],checkX, checkY)

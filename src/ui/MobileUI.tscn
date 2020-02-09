@@ -33,7 +33,6 @@ font_data = ExtResource( 5 )
 script = ExtResource( 1 )
 
 [node name="screen" type="VBoxContainer" parent="."]
-editor/display_folded = true
 anchor_right = 1.0
 anchor_bottom = 1.0
 mouse_filter = 2
@@ -57,7 +56,6 @@ __meta__ = {
 }
 
 [node name="log" type="ScrollContainer" parent="screen/top/logbar"]
-editor/display_folded = true
 margin_right = 1920.0
 margin_bottom = 130.0
 size_flags_horizontal = 3
@@ -69,7 +67,6 @@ scroll_horizontal_enabled = false
 [node name="GridContainer" type="GridContainer" parent="screen/top/logbar/log"]
 
 [node name="logToggle" type="Button" parent="screen/top/logbar"]
-editor/display_folded = true
 margin_top = 130.0
 margin_right = 1920.0
 margin_bottom = 162.0
@@ -86,7 +83,6 @@ custom_styles/normal = SubResource( 2 )
 enabled_focus_mode = 0
 
 [node name="toggleIcon" type="TextureRect" parent="screen/top/logbar/logToggle"]
-editor/display_folded = true
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -129,7 +125,6 @@ size_flags_vertical = 3
 size_flags_stretch_ratio = 50.0
 
 [node name="middle" type="ReferenceRect" parent="screen"]
-editor/display_folded = true
 margin_top = 206.0
 margin_right = 1920.0
 margin_bottom = 974.0
@@ -200,7 +195,6 @@ enabled_focus_mode = 0
 text = "Ground ▼"
 
 [node name="groundView" type="ScrollContainer" parent="screen/middle/c/c/groundViewer"]
-editor/display_folded = true
 margin_top = 60.0
 margin_right = 737.0
 margin_bottom = 276.0
@@ -214,10 +208,8 @@ margin_right = 737.0
 margin_bottom = 216.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-columns = 2
 
 [node name="bottom" type="ReferenceRect" parent="screen"]
-editor/display_folded = true
 margin_top = 978.0
 margin_right = 1920.0
 margin_bottom = 1080.0
@@ -228,7 +220,6 @@ size_flags_vertical = 3
 size_flags_stretch_ratio = 0.5
 
 [node name="equipBar" type="HBoxContainer" parent="screen/bottom"]
-editor/display_folded = true
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
@@ -240,7 +231,6 @@ custom_constants/separation = 20
 alignment = 1
 
 [node name="leftEquip" type="HBoxContainer" parent="screen/bottom/equipBar"]
-editor/display_folded = true
 margin_right = 783.0
 margin_bottom = 128.0
 mouse_filter = 2
@@ -358,3 +348,4 @@ margin_right = 40.0
 margin_bottom = 40.0
 [connection signal="pressed" from="screen/top/logbar/logToggle" to="." method="_on_logToggle_pressed"]
 [connection signal="pressed" from="screen/middle/c/c/groundViewer/GroundToggle" to="." method="_on_GroundToggle_pressed"]
+[connection signal="pressed" from="screen/bottom/equipBar/menuButton" to="." method="_on_menuButton_pressed"]
