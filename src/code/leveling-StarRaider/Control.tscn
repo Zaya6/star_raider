@@ -1,0 +1,89 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Panel.gd" type="Script" id=1]
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Panel" type="Panel" parent="."]
+margin_left = 288.0
+margin_top = 56.0
+margin_right = 752.0
+margin_bottom = 574.0
+script = ExtResource( 1 )
+
+[node name="Button" type="Button" parent="Panel"]
+margin_left = 150.0
+margin_top = 297.0
+margin_right = 313.0
+margin_bottom = 317.0
+text = "Calculate EXP"
+
+[node name="Player" type="LineEdit" parent="Panel"]
+margin_left = 121.0
+margin_top = 154.0
+margin_right = 179.0
+margin_bottom = 198.0
+
+[node name="Enemy" type="LineEdit" parent="Panel"]
+margin_left = 268.0
+margin_top = 155.0
+margin_right = 326.0
+margin_bottom = 199.0
+
+[node name="Label4" type="Label" parent="Panel"]
+margin_left = 107.0
+margin_top = 343.0
+margin_right = 185.0
+margin_bottom = 359.0
+text = "EXP GAINED"
+
+[node name="expnum" type="Label" parent="Panel"]
+margin_left = 105.867
+margin_top = 370.648
+margin_right = 180.867
+margin_bottom = 411.648
+align = 1
+valign = 1
+
+[node name="Label2" type="Label" parent="Panel"]
+margin_left = 123.756
+margin_top = 129.108
+margin_right = 178.756
+margin_bottom = 143.108
+text = "PLAYER"
+
+[node name="Label3" type="Label" parent="Panel"]
+margin_left = 272.324
+margin_top = 127.892
+margin_right = 327.324
+margin_bottom = 141.892
+text = "ENEMY"
+
+[node name="Label" type="Label" parent="Panel"]
+margin_left = 287.0
+margin_top = 343.0
+margin_right = 420.0
+margin_bottom = 363.0
+text = "Current Exp gathered"
+
+[node name="exp gathered" type="Label" parent="Panel"]
+margin_left = 296.0
+margin_top = 380.0
+margin_right = 414.0
+margin_bottom = 404.0
+
+[node name="Label5" type="Label" parent="Panel"]
+margin_left = 295.784
+margin_top = 409.568
+margin_right = 404.784
+margin_bottom = 426.568
+text = "Current level"
+
+[node name="level" type="Label" parent="Panel"]
+margin_left = 305.0
+margin_top = 441.0
+margin_right = 351.0
+margin_bottom = 463.0
+[connection signal="pressed" from="Panel/Button" to="Panel" method="_on_Button_pressed"]
