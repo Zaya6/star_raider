@@ -14,6 +14,16 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://code/controllers/EntityController.gd"
 }, {
+"base": "Reference",
+"class": "Item",
+"language": "GDScript",
+"path": "res://code/Item generation/item generation/Item.gd"
+}, {
+"base": "Reference",
+"class": "ItemBuilder",
+"language": "GDScript",
+"path": "res://code/Item generation/item generation/ItemBuilder.gd"
+}, {
 "base": "Node2D",
 "class": "Level",
 "language": "GDScript",
@@ -48,16 +58,30 @@ _global_script_classes=[ {
 "class": "TileMatcher",
 "language": "GDScript",
 "path": "res://code/gen/TileMatcher.gd"
+}, {
+"base": "Reference",
+"class": "WeaponItem",
+"language": "GDScript",
+"path": "res://code/Item generation/WeaponGenerator/WeaponItem.gd"
+}, {
+"base": "Reference",
+"class": "WepGeneration",
+"language": "GDScript",
+"path": "res://code/Item generation/WeaponGenerator/WepGeneration.gd"
 } ]
 _global_script_class_icons={
 "EntityController": "",
+"Item": "",
+"ItemBuilder": "",
 "Level": "",
 "LevelGenStage": "",
 "PlayerController": "",
 "Region": "",
 "RegionTile": "",
 "SingleTileMatcher": "",
-"TileMatcher": ""
+"TileMatcher": "",
+"WeaponItem": "",
+"WepGeneration": ""
 }
 
 [application]

@@ -1,5 +1,5 @@
 #code created by Robert Griffin(AKA Sinist75, AKA Sinist) january-febuary of 2020
-class_name Builder
+class_name ItemBuilder
 var numGen = RandomNumberGenerator.new()
 var itemType = [["health",10],["mana",10]]
 #[health/mana][value]
