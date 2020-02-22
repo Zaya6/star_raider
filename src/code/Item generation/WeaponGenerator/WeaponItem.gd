@@ -7,8 +7,12 @@ var rarety = ["null",0]
 func _init():
 	pass
 
-#func getName():
-#	return rarety[0] + "-" + type[0] + " of " + elemental[0] 
-#
+func getName():
+	var name = type[0]
+	if not rarety[0] == "null":
+		name = "A "+ rarety[0] +" "+ name
+	if not elemental[0] == "null":
+		name = name +" of "+ elemental[0]
+	return name
 #func getDmg():
 #	pass
